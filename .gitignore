@@ -1,2 +1,3 @@
 /legacy
 /.vscode
+.env.local
