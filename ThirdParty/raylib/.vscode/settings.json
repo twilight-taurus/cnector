@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.hpp": "cpp",
+        "stb_image_write.h": "c",
+        "stb_truetype.h": "c",
+        "stb_rect_pack.h": "c",
+        "config.h": "c"
+    }
+}

@@ -1,0 +1,102 @@
+//    memcpy_s(indices_ptr, sizeof(int)*triangle_count*3, (RENDER_STATE->terrain_model.model.meshes + 0)->indices, sizeof(unsigned int)*triangle_count*3);
+
+//    int (*ptr)[1800000] = index_base;
+/*
+    for ( int i = 0 ; i < index_count ; i++ ) {
+//        printf("Starting index loop.\n");
+        val_ref = (&index_base + i);
+
+//        printf("Index %d; &value ref: %d\n", i, *(val_ref + i));
+        printf("value ref:  %d\n", **val_ref);
+
+        if (val != NULL) {
+            printf("value: %d\n", val);
+        }
+/*
+        printf("size of &value deref:  %d\n", sizeof(&val_deref) );
+        printf("size of &value ref:  %d\n", sizeof(&val_ref) );
+
+        printf("size of value deref:  %d\n", sizeof(val_deref) );
+        printf("size of value ref:  %d\n", sizeof(val_ref) );
+        printf("size of *value ref:  %d\n", sizeof(val_ref) );
+*/
+
+//        *(indices_ptr + i) = val_deref;
+
+//        index_base += 1;
+//        indices_ptr += 1;
+
+//        if ( i > 20 ) {
+//            exit(1);
+//        }
+//    }
+
+
+//    index_base = &index_base[0];
+//    indices_ptr = &indices_ptr[0];
+
+/*
+    // load fbx model here.
+    ufbx_load_opts opts = { }; // Optional, pass NULL for defaults
+    ufbx_error error; // Optional, pass NULL if you don't care about errors
+    ufbx_scene *scene = ufbx_load_file("vor02.fbx", &opts, &error);
+    if (!scene) { printf("Failed loading FBX Scene.\n");; exit(1); }
+
+    printf("Loaded FBX Scene.\n");
+
+    ufbx_mesh * mesh = ufbx_find_mesh(scene, "vor02");
+    if (!mesh) { printf("Failed to find Mesh.\n"); exit(1); }
+    // get first mesh
+//    ufbx_mesh * mesh = scene->meshes.data;
+    int num_meshes = scene->meshes.size;
+    int num_models = scene->models.size;
+
+    printf("Got Mesh from FBX Scene.\n");
+    ufbx_real * vertices;
+*/
+    // allocate memory for vertices.
+//    float * vertices_fbx = calloc(mesh->num_vertices, 4*sizeof(float));
+//    float * vertices_fbx = calloc(RENDER_STATE->terrain_model.model.meshes[0].vertexCount * 4, sizeof(float));
+    printf("Allocated memory for mesh vertices.\n");
+
+/*
+    printf("Number of triangles: %d\n", mesh->num_triangles);
+    printf("Number of vertices: %d\n", mesh->num_vertices);
+    printf("Number of indices: %d\n", mesh->num_indices);
+
+    printf("Number of meshes: %d\n", num_meshes);
+    printf("Number of models: %d\n", num_models);
+    printf("Number of faces: %d\n", mesh->num_faces);
+*/
+
+//    int * indices_fbx = calloc(mesh->num_faces * 3, sizeof(int));
+//    int * indices_fbx = calloc(RENDER_STATE->terrain_model.model.meshes[0].triangleCount * 3, sizeof(int));
+
+    printf("Moved short to int.\n");
+
+/*
+    for ( size_t face_ix = 0 ; face_ix < mesh->num_faces; face_ix++ ) {
+        ufbx_face face = mesh->faces[face_ix];
+//        printf("Number of face indices: %d\n", face.num_indices);
+        // the current face/triangle
+        for ( size_t vertex_ix = 0 ; vertex_ix < face.num_indices; vertex_ix++ ) {
+            // pick the relevanti indices for the current face.
+            size_t index = face.index_begin + vertex_ix;
+
+//            vertices_fbx[k + 0] = (float)mesh->vertex_position.data[i].v[j];
+//            vertices_fbx[k + 1] = (float)mesh->vertex_position.data[i].v[j];
+//            vertices_fbx[k + 2] = (float)mesh->vertex_position.data[i].v[j];
+
+//            vertices_fbx[k + 3] = 0.0f; // add w-component
+//            k += 4;
+
+            indices_fbx[j + vertex_ix] = mesh->vertex_position.indices[index];
+        }
+
+        j += 3;
+    }
+*/
+
+//    printf("Allocated indices!\n");
+
+//    printf("Allocated vertices!\n");
