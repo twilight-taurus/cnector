@@ -26,14 +26,18 @@
 # Define required raylib variables
 PROJECT_NAME       ?= game
 RAYLIB_VERSION     ?= 4.0.0
-RAYLIB_PATH        ?= .
+
+THIRDPARTYDEPS_PATH ?= ThirdParty
+
+# HINT> renamed RAYLIB_PATH to CNECTOR_PATH 
+# (syntactically it actually refers to project itself, not to raylib ! )
+CNECTOR_PATH        ?= .
 
 
 # other
 LIB_PATH ?= lib
 INCLUDE_PATH ?= include
 
-THIRDPARTYDEPS_PATH ?= ThirdParty
 
 # Define compiler path on Windows
 COMPILER_PATH      ?= C:/raylib/w64devkit/bin
@@ -112,15 +116,15 @@ endif
 # Required for ldconfig or other tools that do not perform path expansion.
 ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS),LINUX)
-        RAYLIB_PREFIX ?= .
-        RAYLIB_PATH    = $(realpath $(RAYLIB_PREFIX))
+        CNECTOR_PREFIX ?= .
+        CNECTOR_PATH    = $(realpath $(CNECTOR_PREFIX))
     endif
 endif
 # Default path for raylib on Raspberry Pi, if installed in different path, update it!
 # This is not currently used by src/Makefile. Not sure of its origin or usage. Refer to wiki.
 # TODO: update install: target in src/Makefile for RPI, consider relation to LINUX.
 ifeq ($(PLATFORM),PLATFORM_RPI)
-    RAYLIB_PATH       ?= /home/pi/raylib
+    CNECTOR_PATH       ?= /home/pi/raylib
 endif
 
 ifeq ($(PLATFORM),PLATFORM_WEB)
@@ -136,7 +140,7 @@ endif
 
 # Define raylib release directory for compiled library.
 # RAYLIB_RELEASE_PATH points to provided binaries or your freshly built version
-RAYLIB_RELEASE_PATH 	?= $(RAYLIB_PATH)/$(THIRDPARTYDEPS_PATH)/raylib
+RAYLIB_RELEASE_PATH 	?= $(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib
 
 # EXAMPLE_RUNTIME_PATH embeds a custom runtime location of libraylib.so or other desired libraries
 # into each example binary compiled with RAYLIB_LIBTYPE=SHARED. It defaults to RAYLIB_RELEASE_PATH
@@ -268,13 +272,13 @@ ifeq ($(PLATFORM),PLATFORM_WEB)
     endif
 
     # Define a custom shell .html and output extension
-    CFLAGS += --shell-file $(RAYLIB_PATH)/$(THIRDPARTYDEPS_PATH)/raylib/shell.html
+    CFLAGS += --shell-file $(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib/src/shell.html
     EXT = .html
 endif
 
 # Define include paths for required headers
 # NOTE: Several external required libraries (stb and others)
-INCLUDE_PATHS = -I. -I./header -I$(RAYLIB_PATH)/$(THIRDPARTYDEPS_PATH)/raylib -I$(RAYLIB_PATH)/$(THIRDPARTYDEPS_PATH)/raylib/external -I$(INCLUDE_PATH) -I$(RAYLIB_PATH)/$(THIRDPARTYDEPS_PATH)/bullet3 -I$(API_DIR)/bullet3 -I$(RAYLIB_PATH)/$(THIRDPARTYDEPS_PATH)/cglm/include -I$(RAYLIB_PATH)/$(THIRDPARTYDEPS_PATH)/STC/include -I$(RAYLIB_PATH)/$(THIRDPARTYDEPS_PATH)
+INCLUDE_PATHS = -I. -I./header -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib/src -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib/src/external -I$(INCLUDE_PATH) -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/bullet3 -I$(API_DIR)/bullet3 -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/cglm/include -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/STC/include -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)
 # Define additional directories containing required header files
 ifeq ($(PLATFORM),PLATFORM_RPI)
     # RPI required libraries
@@ -290,7 +294,7 @@ ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS),LINUX)
         # Reset everything.
         # Precedence: immediately local, installed version, raysan5 provided libs -I$(RAYLIB_H_INSTALL_PATH) -I$(RAYLIB_PATH)/release/include
-        INCLUDE_PATHS = -I$(RAYLIB_H_INSTALL_PATH) -isystem. -isystem$(RAYLIB_PATH)/$(THIRDPARTYDEPS_PATH)/raylib -isystem$(RAYLIB_PATH)/$(THIRDPARTYDEPS_PATH)/release/include -isystem$(RAYLIB_PATH)/$(THIRDPARTYDEPS_PATH)/raylib/external
+        INCLUDE_PATHS = -I$(RAYLIB_H_INSTALL_PATH) -isystem. -isystem$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib -isystem$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/release/include -isystem$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib/external
     endif
 endif
 
@@ -410,23 +414,22 @@ TEST_DIR := test
 # Project target defined by PROJECT_NAME
 #$(PROJECT_NAME): $(OBJS)
 all:
-# runs mingw32-make
+# runs 'mingw32-make game', which starts the 'PROJECT_NAME' program below. (game == PROJECT_NAME)
+# MAKEFILE_PARAMS == 'EXE' == 'game'
 	$(MAKE) $(MAKEFILE_PARAMS)
+# info command prints out the RES filenames (or filepaths).
 	$(info $(RES))
-
-#$(OBJ_DIR)/%.o: $(API_DIR)/%.cpp
-#	$(CXX) -c $< -o $@ $(CFLAGS) $(INCLUDE_PATHS) -D$(PLATFORM)
-
-#$(OBJS): | $(BIN_DIR)
 
 #$(BIN_DIR):
 #	mkdir -p $(BIN_DIR)
 
-#$(PROJECT_NAME): $(OBJS)
-#	$(CXX) $(INCLUDE_PATHS) main/main.c -o $(BIN_DIR)/$(PROJECT_NAME)$(EXT) $(OBJS_C) $(OBJS_CXX) $(LDFLAGS) $(LDLIBS) -D$(PLATFORM)
+# 'PROJECT_NAME' is the name of the command entered after make/mingw32-make
+# 'OBJS_CXX' argument signals, that the execution is dependent on 'OBJS_CXX' running first (below)
 $(PROJECT_NAME): $(OBJS_CXX)
 #	$(CXX) $(INCLUDE_PATHS) $(SRC) -fmax-errors=10 -std=c11 -std=c++11 -o $(BIN_DIR)/$(PROJECT_NAME)$(EXT) $(OBJS_CXX) $(LDFLAGS) $(LDLIBS) -D$(PLATFORM)
 	$(CC) $(INCLUDE_PATHS) $(SRC) $(OBJS_CXX) -fmax-errors=10 -std=c99 -DGLEW_STATIC -lstdc++ -o $(BIN_DIR)/$(PROJECT_NAME)$(EXT) $(LDFLAGS) $(LDLIBS) -D$(PLATFORM)
+#	remove all object files left are compilation.
+	rm -f $(OBJS_CXX) $(OBJS_C)
 # NOTE: This pattern will compile every module defined on $(OBJS)
 #%.o: %.c
 

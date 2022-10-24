@@ -49,11 +49,11 @@ void init_shader() {
     );
 */
 
-    SHADER_STATE->shader_phong = LoadShader("base_lighting.vs", "base_lighting.fs");
-//    SHADER_STATE->shader_phong = LoadShader("base_shading.vs", "base_shading.fs");
+//    SHADER_STATE->shader_phong = LoadShader("base_lighting.vs", "base_lighting.fs");
+    SHADER_STATE->shader_phong = LoadShader("base_shading.vs", "base_shading.fs");
 
     printf("Loaded custom shaders.\n");
-
+/*
     Color color_wh = WHITE;
 
     vec4 color_vec = {
@@ -62,13 +62,15 @@ void init_shader() {
         color_wh.b,
         color_wh.a
     };
-
+*/
     // Get Phong shader uniforms
     SHADER_STATE->viewPosLoc = GetShaderLocation(SHADER_STATE->shader_phong, "viewPos");
 
     SHADER_STATE->lightPosLoc = GetShaderLocation(SHADER_STATE->shader_phong, "lightPos");
 
     SHADER_STATE->lightColLoc = GetShaderLocation(SHADER_STATE->shader_phong, "lightColor");
+
+    SHADER_STATE->colDiffLoc = GetShaderLocation(SHADER_STATE->shader_phong, "colDiffLoc");
 
     float cameraPos[3] = {
         CAMERA_STATE->camera.position.x,
@@ -78,13 +80,20 @@ void init_shader() {
 
     float lightPos[3] = {
         0.0,
-        50.0,
+        30.0,
         0.0
     };
 
     float lightCol[4] = {
         1.0,
         1.0,
+        1.0,
+        0.7
+    };
+
+    float colDiff[4] = {
+        1.0,
+        0.0,
         1.0,
         1.0
     };
@@ -96,8 +105,8 @@ void init_shader() {
 
     SetShaderValue(SHADER_STATE->shader_phong, SHADER_STATE->lightPosLoc, lightPos, SHADER_UNIFORM_VEC3);
 
+    SetShaderValue(SHADER_STATE->shader_phong, SHADER_STATE->colDiffLoc, colDiff, SHADER_UNIFORM_VEC4);
 }
-
 
 void deinit_shader() {
 //    UnloadShader(SHADER_STATE->shader_light);
@@ -118,25 +127,26 @@ inline void update_shader() {
         CAMERA_STATE->camera.position.y,
         CAMERA_STATE->camera.position.z
     };
-
+/*
     float lightPos[3] = {
         0.0,
-        50.0,
+        70.0,
         0.0
     };
 
     float lightCol[4] = {
-        1.0,
-        1.0,
-        1.0,
+        0.7,
+        0.7,
+        0.7,
         1.0
     };
+*/
 
-    SetShaderValue(SHADER_STATE->shader_phong, SHADER_STATE->lightColLoc, lightCol, SHADER_UNIFORM_VEC4);
+//    SetShaderValue(SHADER_STATE->shader_phong, SHADER_STATE->lightColLoc, lightCol, SHADER_UNIFORM_VEC4);
 
     // Set Phong shading uniforms.
     SetShaderValue(SHADER_STATE->shader_phong, SHADER_STATE->viewPosLoc, cameraPos, SHADER_UNIFORM_VEC3);
 
-    SetShaderValue(SHADER_STATE->shader_phong, SHADER_STATE->lightPosLoc, lightPos, SHADER_UNIFORM_VEC3);
+//    SetShaderValue(SHADER_STATE->shader_phong, SHADER_STATE->lightPosLoc, lightPos, SHADER_UNIFORM_VEC3);
 
 }

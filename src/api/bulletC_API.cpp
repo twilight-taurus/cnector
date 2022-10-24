@@ -165,6 +165,9 @@ b3RigidBody * b3RigidBody_initSphere(vec3 origin, float radius, vec3 inertia, fl
 
     b3RigidBody* body_sphere = new btRigidBody(info_sphere);
 
+    // sphere will never deactivate.
+    body_sphere->setActivationState(DISABLE_DEACTIVATION);
+
     // add rigid body to world, and put reference to vector.
     return body_sphere;
 }

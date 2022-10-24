@@ -48,7 +48,8 @@ typedef struct CPhysBaseInfo {
     CPhysObjectType         physics_type; // used to determine what object config entry to read from or write to.
     CPhysCfg                phys_config; // base configuration options for each physical object
     CGLM_ALIGN_MAT mat4     world_transform; // physics object world transform.
-
+    bool                    invisible;
+    bool                    controlled;
     // extended attributes ...
 
 } CPhysBaseInfo;
@@ -60,7 +61,7 @@ typedef struct CCharacterInfo {
     CPhysObjectType         physics_type; // used to determine what object config entry to read from or write to.
     CPhysCfg                phys_config; // base configuration options for each physical object
     CGLM_ALIGN_MAT mat4     world_transform; // physics object world transform.
-
+    bool                    invisible;
     // extended attributes for models
     CAsset_ID               asset_id;
     CModelCfg               model_config; // 4 bytes
@@ -73,7 +74,7 @@ typedef struct CVehicleInfo {
     CPhysObjectType         physics_type; // used to determine what object config entry to read from or write to.
     CPhysCfg                phys_config; // base configuration options for each physical object
     CGLM_ALIGN_MAT mat4     world_transform; // physics object world transform.
-
+    bool                    invisible;
     // extended attributes for models
     CAsset_ID               asset_id;
     CModelCfg               model_config; // 4 bytes
@@ -86,7 +87,7 @@ typedef struct CStructureInfo {
     CPhysObjectType         physics_type; // used to determine what object config entry to read from or write to.
     CPhysCfg                phys_config; // base configuration options for each physical object
     CGLM_ALIGN_MAT mat4     world_transform; // physics object world transform.
-
+    bool                    invisible;
     // extended attributes for models
     CAsset_ID               asset_id;
     CModelCfg               model_config; // 4 bytes
@@ -101,7 +102,7 @@ typedef struct CTerrainInfo {
     CPhysObjectType         physics_type; // used to determine what object config entry to read from or write to.
     CPhysCfg                phys_config; // base configuration options for each physical object
     CGLM_ALIGN_MAT mat4     world_transform; // physics object world transform.
-
+    bool                    invisible;
     // extended attributes for models
     CAsset_ID               asset_id;
     CModelCfg               model_config; // 4 bytes
@@ -113,7 +114,7 @@ typedef struct CSphereInfo {
     CPhysObjectType         physics_type; // used to determine what object config entry to read from or write to.
     CPhysCfg                phys_config; // base configuration options for each physical object
     CGLM_ALIGN_MAT mat4     world_transform; // physics object world transform.
-
+    bool                    invisible;
     // extended attributes for spheres
     bool                    isAsset;
     CAsset_ID               asset_id; // only valid if isAsset is true
@@ -128,7 +129,7 @@ typedef struct CCubeInfo {
     CPhysObjectType         physics_type; // used to determine what object config entry to read from or write to.
     CPhysCfg                phys_config; // base configuration options for each physical object
     CGLM_ALIGN_MAT mat4     world_transform; // physics object world transform.
-
+    bool                    invisible;
     // extended attributes for spheres
     bool                    isAsset;
     CAsset_ID               asset_id; // only valid if isAsset is true
@@ -143,7 +144,7 @@ typedef struct CPlaneInfo {
     CPhysObjectType         physics_type; // used to determine what object config entry to read from or write to.
     CPhysCfg                phys_config; // base configuration options for each physical object
     CGLM_ALIGN_MAT mat4     world_transform; // physics object world transform.
-
+    bool                    invisible;
     // extended attributes for spheres
     bool                    isAsset;
     CAsset_ID               asset_id; // only valid if isAsset is true

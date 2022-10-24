@@ -25,7 +25,9 @@ void init_world() {
      // can be done on processing thread partially. binding ressources may need to be done on main thread.
 //    Image img = LoadImage("terrain_textured03.png");
 
+/*
     Image img1 = LoadImage("terrain_textured.png");
+*/
     Image img2 = LoadImage("wood_texture.jpg");
 
 //    Matrix terrain_transform = RENDER_STATE->terrain_model.model.transform;
@@ -33,7 +35,8 @@ void init_world() {
 //    RENDER_STATE->terrain_model.model.transform = MatrixRotateZ(210.0f);
 //    RENDER_STATE->terrain_model.model.transform = MatrixRotateX(PI / 2.0);
 
-    if ((img1.data == NULL)) {
+
+    if ((img2.data == NULL)) {
         printf("Failed to load image.\n");
     } else {
         printf("image load success.\n");
@@ -44,13 +47,14 @@ void init_world() {
 //    ImageRotateCCW(&img);
 //    ImageRotateCW(&img);
 
-    terrain->terrain.model->materials[0].maps[0].texture = LoadTextureFromImage(img1);
+    terrain->terrain.model->materials[0].maps[0].texture = LoadTextureFromImage(img2);
 
-    terrain->terrain.model->materials[1].maps[0].texture = LoadTextureFromImage(img2);
-    terrain->terrain.model->materials[2].maps[0].texture = LoadTextureFromImage(img2);
+//    terrain->terrain.model->materials[1].maps[0].texture = LoadTextureFromImage(img2);
+//    terrain->terrain.model->materials[2].maps[0].texture = LoadTextureFromImage(img2);
 
-    UnloadImage(img1);
+//    UnloadImage(img1);
     UnloadImage(img2);
+
 
 //    CObject_addPhysicalPlaneAsset(&ASSETS_STATE->cassets.data[2].shape.plane);
 
@@ -184,7 +188,10 @@ void CObject_removeVirtual(const CVirtualObject * virt) {
 unsigned int CObject_addPhysicalModel(CModel * cmodel) {
     CObject object;
     object.base.object_type = OBJECT_TYPE_PHYSICAL;
+    // physical config
     glm_mat4_identity(object.physical.info.base_info.world_transform);
+    object.physical.info.base_info.invisible = false;
+    object.physical.info.base_info.controlled = false;
 
     switch (cmodel->type) {
         case CMODEL_CHARACTER:
@@ -270,6 +277,7 @@ unsigned int CObject_addPhysicalFromCInfo(CPhysObjectInfo * desc) {
             break;
         default:
             printf("Continue...\n");
+            break;
     }
 
     // TODO: consider creating b3RigidBody body here 
@@ -327,7 +335,7 @@ unsigned int CObject_addPhysicalSphereAsset(CSphere * sphere, vec3 translation) 
 
     object.sphere.model = &sphere->model;
 
-//    object.sphere.model->materials[0].maps[MATERIAL_MAP_DIFFUSE].color = (Color){0, 0, 0, 255};
+    object.sphere.model->materials[0].maps[MATERIAL_MAP_DIFFUSE].color = (Color){0, 0, 0, 255};
     object.sphere.model->materials[0].shader = SHADER_STATE->shader_phong;
 
     ////////////////////////////////////////

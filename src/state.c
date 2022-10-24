@@ -105,11 +105,10 @@ void init_state() {
     // --> radius.
     CAMERA_STATE->distance = 50.0f;
 
-    CAMERA_STATE->mode = CAMERAMODE_THIRDPERSON;
-
     CAMERA_STATE->camera = camera;
 
-    SetCameraMode(camera, CAMERA_PERSPECTIVE);
+    CAMERA_STATE->mode = CAMERAMODE_FIRSTPERSON;
+    SetCameraMode(camera, CAMERA_FIRST_PERSON);
 
 }
 

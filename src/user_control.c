@@ -13,6 +13,7 @@ void deinit_control() {
 }
 
 void assign_control(CPhysObject * obj) {
+    obj->info.base_info.controlled = true;
     CONTROL_STATE->control_object = obj;
 }
 

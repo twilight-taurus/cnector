@@ -178,7 +178,7 @@ void init_assets() {
     // terrain model
 //    CModel_addFromFile("terrain_textured03.obj", CMODEL_TERRAIN);
 
-    CModel_addFromFile("level_arena.obj", CMODEL_TERRAIN);
+    CModel_addFromFile("planeMapWood.obj", CMODEL_TERRAIN);
 
     // plane
     CShape_addPlane(500, 500, 1, 1);

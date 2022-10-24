@@ -106,7 +106,7 @@ void render() {
                                     object.sphere.info.sphere_info.world_transform[3][2]
                                 };
 
-                                DrawModel(*object.sphere.model, loc_sphere, 1.0, WHITE);
+                                //DrawModel(*object.sphere.model, loc_sphere, 1.0, WHITE);
 
                                 break;
                             case CPHYS_TERRAIN:

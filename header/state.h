@@ -50,8 +50,11 @@ typedef struct CWindowState {
 } CWindowState;
 
 typedef struct CShaderState {
+    // TODO: try to arrange Shaders in an array/vector
+    // use a gui to list them by their name.
     Shader      shader_light;
     Shader      shader_phong;
+    
     Light       lights[MAX_LIGHTS];
 
     int         viewPosLoc;
@@ -59,6 +62,7 @@ typedef struct CShaderState {
     // phong shader values
     int         lightPosLoc;
     int         lightColLoc;
+    int         colDiffLoc;
 } CShaderState;
 
 typedef struct CThreadingState {

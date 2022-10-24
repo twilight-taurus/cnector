@@ -20,7 +20,39 @@ int deinit_camera() {
     return 0;
 }
 
-// adjust camera position according to a user controlled/targeted object and a given distance 
+CNECTOR_INLINE void process_mouse() {
+
+    Vector2 mouse_pos = GetMousePosition();
+    float sensitivity = 0.1;
+
+    if (FIRST_MOUSE) {
+        CAMERA_STATE->lastX = mouse_pos.x;
+        CAMERA_STATE->lastY = mouse_pos.y;
+        FIRST_MOUSE = false;
+    }
+
+    float xoffset = mouse_pos.x - CAMERA_STATE->lastX;
+    float yoffset = CAMERA_STATE->lastY - mouse_pos.y;
+
+    CAMERA_STATE->lastX = mouse_pos.x;
+    CAMERA_STATE->lastY = mouse_pos.y;
+
+    xoffset *= sensitivity;
+    yoffset *= sensitivity;
+
+    CAMERA_STATE->yaw += xoffset;
+    CAMERA_STATE->pitch += yoffset;
+
+    // ensure user is able to look up to sky, and down to feet
+    // but not further.
+    if(CAMERA_STATE->pitch > 89.0f)
+        CAMERA_STATE->pitch =  89.0f;
+    if(CAMERA_STATE->pitch < -89.0f)
+        CAMERA_STATE->pitch = -89.0f;
+
+}
+
+// adjust camera position according to a targeted object
 void process_target() {
 //    printf("processing camera target!\n");
         // get transformation matrix of current interaction object.
@@ -41,6 +73,15 @@ void process_target() {
             -- here we only process the new values for the camera target.
 
         */
+}
+// adjust camera position in accordance with the controlled object's position.
+void process_position() {
+    CGLM_ALIGN_MAT mat4 transform;
+    b3RigidBody_getTransform( CONTROL_STATE->control_object->physics_body, transform );
+
+    CAMERA_STATE->position[0] = transform[3][0];
+    CAMERA_STATE->position[1] = transform[3][1];
+    CAMERA_STATE->position[2] = transform[3][2];
 }
 
 // free camera movement.
@@ -87,94 +128,53 @@ CNECTOR_INLINE void process_horizontal() {
         glmc_vec3_sub(CAMERA_STATE->position, CAMERA_STATE->direction, CAMERA_STATE->position);
     }
 }
+
+CNECTOR_INLINE void process_directional() {
+    process_lateral();
+    process_vertical();
+    process_horizontal();
+}
+
 // rotational movement -> recalculate directional, right, and up vector here.
 static inline void process_rotational() {
+
+    Vector2 mouse_pos;
+    float xoffset;
+    float yoffset;
+    const float sensitivity = 0.1f;
+    vec3 direction;
+    float rad_yaw;
+    float rad_pitch;
+
 //    printf("processing camera rotational!\n");
     switch (CAMERA_STATE->mode) {
         case CAMERAMODE_FREE:
-            if ( IsMouseButtonDown(MOUSE_BUTTON_LEFT) ) {
+            process_mouse();
 
-                Vector2 mouse_pos = GetMousePosition();
+            // convert angle to radians first.
+            direction[0] = cosf(glm_rad(CAMERA_STATE->yaw)) * cosf(glm_rad(CAMERA_STATE->pitch)); // x
+            direction[2] = sinf(glm_rad(CAMERA_STATE->yaw)) * cosf(glm_rad(CAMERA_STATE->pitch)); // z
+            direction[1] = sinf(glm_rad(CAMERA_STATE->pitch)); // y
+            glmc_vec3_normalize_to(direction, CAMERA_STATE->direction);
 
-                if (FIRST_MOUSE) {
-                    CAMERA_STATE->lastX = mouse_pos.x;
-                    CAMERA_STATE->lastY = mouse_pos.y;
-                    FIRST_MOUSE = false;
-                }
+            // TODO: fix. --> correct now.
+            glmc_vec3_add(CAMERA_STATE->position, CAMERA_STATE->direction, CAMERA_STATE->target);
 
-                float xoffset = mouse_pos.x - CAMERA_STATE->lastX;
-                float yoffset = CAMERA_STATE->lastY - mouse_pos.y;
+            // process new values for up vector, and right vector ...
+            // get right vector by getting cross product up vector and direction vector. (x axis vector)
+            glmc_vec3_cross(CAMERA_STATE->up_vector, CAMERA_STATE->direction, CAMERA_STATE->right);
+            glmc_vec3_normalize(CAMERA_STATE->right);
 
-                CAMERA_STATE->lastX = mouse_pos.x;
-                CAMERA_STATE->lastY = mouse_pos.y;
+            // get the up vector for current camera view.
+//                glmc_vec3_cross(CAMERA_STATE->direction, CAMERA_STATE->right, CAMERA_STATE->up_vector);
+//                glmc_vec3_normalize(CAMERA_STATE->up_vector);
 
-                const float sensitivity = 0.1f;
-                xoffset *= sensitivity;
-                yoffset *= sensitivity;
-
-                CAMERA_STATE->yaw += xoffset;
-                CAMERA_STATE->pitch += yoffset;
-
-                // ensure user is able to look up to sky, and down to feet
-                // but not further.
-                if(CAMERA_STATE->pitch > 89.0f)
-                    CAMERA_STATE->pitch =  89.0f;
-                if(CAMERA_STATE->pitch < -89.0f)
-                    CAMERA_STATE->pitch = -89.0f;
-
-                vec3 direction;
-                // convert angle to radians first.
-
-                direction[0] = cosf(glm_rad(CAMERA_STATE->yaw)) * cosf(glm_rad(CAMERA_STATE->pitch)); // x
-                direction[2] = sinf(glm_rad(CAMERA_STATE->yaw)) * cosf(glm_rad(CAMERA_STATE->pitch)); // z
-                direction[1] = sinf(glm_rad(CAMERA_STATE->pitch)); // y
-                glmc_vec3_normalize_to(direction, CAMERA_STATE->direction);
-
-                // TODO: fix. --> correct now.
-                glmc_vec3_add(CAMERA_STATE->position, CAMERA_STATE->direction, CAMERA_STATE->target);
-
-                // process new values for up vector, and right vector ...
-                // get right vector by getting cross product up vector and direction vector. (x axis vector)
-                glmc_vec3_cross(CAMERA_STATE->up_vector, CAMERA_STATE->direction, CAMERA_STATE->right);
-                glmc_vec3_normalize(CAMERA_STATE->right);
-
-                // get the up vector for current camera view.
-                glmc_vec3_cross(CAMERA_STATE->direction, CAMERA_STATE->right, CAMERA_STATE->up_vector);
-                glmc_vec3_normalize(CAMERA_STATE->up_vector);
-            }
+            break;
         case CAMERAMODE_THIRDPERSON:
-            Vector2 mouse_pos = GetMousePosition();
+            process_mouse();
 
-            if (FIRST_MOUSE) {
-                CAMERA_STATE->lastX = mouse_pos.x;
-                CAMERA_STATE->lastY = mouse_pos.y;
-                FIRST_MOUSE = false;
-            }
-
-            float xoffset = mouse_pos.x - CAMERA_STATE->lastX;
-            float yoffset = CAMERA_STATE->lastY - mouse_pos.y;
-
-            CAMERA_STATE->lastX = mouse_pos.x;
-            CAMERA_STATE->lastY = mouse_pos.y;
-
-            const float sensitivity = 0.1f;
-            xoffset *= sensitivity;
-            yoffset *= sensitivity;
-
-            CAMERA_STATE->yaw += xoffset;
-            CAMERA_STATE->pitch += yoffset;
-
-            // ensure user is able to look up to sky, and down to feet
-            // but not further.
-            if(CAMERA_STATE->pitch > 89.0f)
-                CAMERA_STATE->pitch =  89.0f;
-            if(CAMERA_STATE->pitch < -89.0f)
-                CAMERA_STATE->pitch = -89.0f;
-
-            vec3 direction;
-
-            float rad_yaw = glm_rad(CAMERA_STATE->yaw);
-            float rad_pitch = glm_rad(CAMERA_STATE->pitch);
+            rad_yaw = glm_rad(CAMERA_STATE->yaw);
+            rad_pitch = glm_rad(CAMERA_STATE->pitch);
 
             // convert angle to radians first.
             direction[0] = cosf(rad_yaw) * cosf(rad_pitch); // x
@@ -185,10 +185,10 @@ static inline void process_rotational() {
 
             // now multiply direction with preferred distance.
             // and set camera position depending on target of third person camera.
-            vec3 directionx;
-            glmc_vec3_scale(CAMERA_STATE->direction, CAMERA_STATE->distance, directionx);
+            vec3 distanceVec;
+            glmc_vec3_scale(CAMERA_STATE->direction, CAMERA_STATE->distance, distanceVec);
 
-            glmc_vec3_sub(CAMERA_STATE->target, directionx, CAMERA_STATE->position);
+            glmc_vec3_sub(CAMERA_STATE->target, distanceVec, CAMERA_STATE->position);
 
             // process new values for up vector, and right vector ...
             // get right vector by getting cross product up vector and direction vector. (x axis vector)
@@ -198,6 +198,34 @@ static inline void process_rotational() {
             // get the up vector for current camera view. (y axis vector)
 //            glmc_vec3_cross(CAMERA_STATE->direction, CAMERA_STATE->right, CAMERA_STATE->up_vector);
 //            glmc_vec3_normalize(CAMERA_STATE->up_vector);
+            break;
+        case CAMERAMODE_FIRSTPERSON:
+            process_mouse();
+
+            rad_yaw = glm_rad(CAMERA_STATE->yaw);
+            rad_pitch = glm_rad(CAMERA_STATE->pitch);
+
+            // convert angle to radians first.
+            direction[0] = cosf(rad_yaw) * cosf(rad_pitch); // x
+            direction[2] = sinf(rad_yaw) * cosf(rad_pitch); // z
+            direction[1] = sinf(rad_pitch); // y
+            // normalize first (z-axis/ forward vector)
+            glmc_vec3_normalize_to(direction, CAMERA_STATE->direction);
+
+            // TODO: apply target/direction to camera object.
+            // --> not necessary, since we only care about direction.
+//            vec3 distanceVec;
+//            glmc_vec3_scale(CAMERA_STATE->direction, CAMERA_STATE->distance, distanceVec);
+
+            // set target with unit direction vector from camera position.
+//            glmc_vec3_sub(CAMERA_STATE->target, distanceVec, CAMERA_STATE->position);
+            glmc_vec3_add(CAMERA_STATE->position, CAMERA_STATE->direction, CAMERA_STATE->target);
+
+            // process new values for up vector, and right vector ...
+            // get right vector by getting cross product up vector and direction vector. (x axis vector)
+            glmc_vec3_cross(CAMERA_STATE->up_vector, CAMERA_STATE->direction, CAMERA_STATE->right);
+            glmc_vec3_normalize(CAMERA_STATE->right);
+            break;
 
         default:
             return;
@@ -239,56 +267,27 @@ static inline void process_camera_thirdperson() {
 
     return;
 }
+
 // free camera mode.
 static inline void process_camera_free() {
 //    printf("processing camera free!\n");
-    process_lateral();
-    process_vertical();
-    process_horizontal();
+    process_directional();
 
     process_rotational();
     process_zoom();
 }
 
-CNECTOR_INLINE void process_keys() {
-    process_lateral();
-    process_vertical();
-    process_horizontal();
+static inline void process_camera_firstperson() {
+
+    process_position();
+
+    process_rotational();
+    process_zoom();
 }
 
-CNECTOR_INLINE void process_mouse() {
 
-    if ( IsMouseButtonDown(MOUSE_BUTTON_LEFT) ) {
 
-        Vector2 mouse_pos = GetMousePosition();
 
-        if (FIRST_MOUSE) {
-            CAMERA_STATE->lastX = mouse_pos.x;
-            CAMERA_STATE->lastY = mouse_pos.y;
-            FIRST_MOUSE = false;
-        }
-
-        float xoffset = mouse_pos.x - CAMERA_STATE->lastX;
-        float yoffset = CAMERA_STATE->lastY - mouse_pos.y;
-
-        CAMERA_STATE->lastX = mouse_pos.x;
-        CAMERA_STATE->lastY = mouse_pos.y;
-
-        const float sensitivity = 0.1f;
-        xoffset *= sensitivity;
-        yoffset *= sensitivity;
-
-        CAMERA_STATE->yaw += xoffset;
-        CAMERA_STATE->pitch += yoffset;
-
-        // ensure user is able to look up to sky, and down to feet
-        // but not further.
-        if(CAMERA_STATE->pitch > 89.0f)
-            CAMERA_STATE->pitch =  89.0f;
-        if(CAMERA_STATE->pitch < -89.0f)
-            CAMERA_STATE->pitch = -89.0f;
-    }
-}
 
 void update_camera() {
     // updates camera for currently set mode.
@@ -317,6 +316,9 @@ void process_camera() {
         case CAMERAMODE_THIRDPERSON:
 //            printf("processing camera third!\n");
             process_camera_thirdperson();
+            break;
+        case CAMERAMODE_FIRSTPERSON:
+            process_camera_firstperson();
             break;
         default:
             return;
