@@ -1,2 +1,2 @@
-C:\raylib\w64devkit\bin\ar.exe qc lib\libglew32.a  CMakeFiles/glew_s.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.obj CMakeFiles/glew_s.dir/C_/Users/Oli/Desktop/projects/cnector/glew/build/glew.rc.obj
-C:\raylib\w64devkit\bin\ranlib.exe lib\libglew32.a
+C:\Users\Oli\MinGW\bin\ar.exe qc lib\libglew32.a  CMakeFiles/glew_s.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.obj CMakeFiles/glew_s.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glew.rc.obj
+C:\Users\Oli\MinGW\bin\ranlib.exe lib\libglew32.a

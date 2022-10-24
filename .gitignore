@@ -1,3 +1,4 @@
 /legacy
 /.vscode
 .env.local
+*.exe

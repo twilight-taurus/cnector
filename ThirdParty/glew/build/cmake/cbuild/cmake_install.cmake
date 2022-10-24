@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake
+# Install script for directory: C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,52 +33,52 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/lib/libglew32.dll.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/lib/libglew32.dll.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/bin/glew32.dll")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/bin/glew32.dll")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/glew32.dll" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/glew32.dll")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "C:/raylib/w64devkit/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/glew32.dll")
+      execute_process(COMMAND "C:/Users/Oli/MinGW/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/glew32.dll")
     endif()
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/lib/libglew32.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/lib/libglew32.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/bin/glewinfo.exe")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/bin/glewinfo.exe")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/glewinfo.exe" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/glewinfo.exe")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "C:/raylib/w64devkit/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/glewinfo.exe")
+      execute_process(COMMAND "C:/Users/Oli/MinGW/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/glewinfo.exe")
     endif()
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/bin/visualinfo.exe")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/bin/visualinfo.exe")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/visualinfo.exe" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/visualinfo.exe")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "C:/raylib/w64devkit/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/visualinfo.exe")
+      execute_process(COMMAND "C:/Users/Oli/MinGW/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/visualinfo.exe")
     endif()
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/glew.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/glew.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/GL" TYPE FILE FILES
-    "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/../../include/GL/wglew.h"
-    "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/../../include/GL/glew.h"
-    "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/../../include/GL/glxew.h"
+    "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/../../include/GL/wglew.h"
+    "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/../../include/GL/glew.h"
+    "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/../../include/GL/glxew.h"
     )
 endif()
 
@@ -86,7 +86,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/glew/glew-targets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/glew/glew-targets.cmake"
-         "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/CMakeFiles/Export/lib/cmake/glew/glew-targets.cmake")
+         "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/CMakeFiles/Export/lib/cmake/glew/glew-targets.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/glew/glew-targets-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -95,16 +95,16 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glew" TYPE FILE FILES "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/CMakeFiles/Export/lib/cmake/glew/glew-targets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glew" TYPE FILE FILES "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/CMakeFiles/Export/lib/cmake/glew/glew-targets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glew" TYPE FILE FILES "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/CMakeFiles/Export/lib/cmake/glew/glew-targets-release.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glew" TYPE FILE FILES "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/CMakeFiles/Export/lib/cmake/glew/glew-targets-release.cmake")
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/glew" TYPE FILE FILES
-    "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/glew-config.cmake"
-    "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/CopyImportedTargetProperties.cmake"
+    "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/glew-config.cmake"
+    "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/CopyImportedTargetProperties.cmake"
     )
 endif()
 
@@ -116,5 +116,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

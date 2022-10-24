@@ -47,10 +47,10 @@ RM = C:\Users\Oli\cmake\bin\cmake.exe -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake
+CMAKE_SOURCE_DIR = C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild
+CMAKE_BINARY_DIR = C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -125,9 +125,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -220,117 +220,117 @@ visualinfo/fast:
 	$(MAKE) -f CMakeFiles\visualinfo.dir\build.make CMakeFiles/visualinfo.dir/build
 .PHONY : visualinfo/fast
 
-C_/Users/Oli/Desktop/projects/cnector/glew/build/glew.obj: C_/Users/Oli/Desktop/projects/cnector/glew/build/glew.rc.obj
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glew.obj: C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glew.rc.obj
 
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/build/glew.obj
-
-# target to build an object file
-C_/Users/Oli/Desktop/projects/cnector/glew/build/glew.rc.obj:
-	$(MAKE) -f CMakeFiles\glew.dir\build.make CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/glew/build/glew.rc.obj
-	$(MAKE) -f CMakeFiles\glew_s.dir\build.make CMakeFiles/glew_s.dir/C_/Users/Oli/Desktop/projects/cnector/glew/build/glew.rc.obj
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/build/glew.rc.obj
-
-C_/Users/Oli/Desktop/projects/cnector/glew/build/glewinfo.obj: C_/Users/Oli/Desktop/projects/cnector/glew/build/glewinfo.rc.obj
-
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/build/glewinfo.obj
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glew.obj
 
 # target to build an object file
-C_/Users/Oli/Desktop/projects/cnector/glew/build/glewinfo.rc.obj:
-	$(MAKE) -f CMakeFiles\glewinfo.dir\build.make CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/build/glewinfo.rc.obj
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/build/glewinfo.rc.obj
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glew.rc.obj:
+	$(MAKE) -f CMakeFiles\glew.dir\build.make CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glew.rc.obj
+	$(MAKE) -f CMakeFiles\glew_s.dir\build.make CMakeFiles/glew_s.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glew.rc.obj
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glew.rc.obj
 
-C_/Users/Oli/Desktop/projects/cnector/glew/build/visualinfo.obj: C_/Users/Oli/Desktop/projects/cnector/glew/build/visualinfo.rc.obj
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glewinfo.obj: C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glewinfo.rc.obj
 
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/build/visualinfo.obj
-
-# target to build an object file
-C_/Users/Oli/Desktop/projects/cnector/glew/build/visualinfo.rc.obj:
-	$(MAKE) -f CMakeFiles\visualinfo.dir\build.make CMakeFiles/visualinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/build/visualinfo.rc.obj
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/build/visualinfo.rc.obj
-
-C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.obj: C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.obj
-
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.obj
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glewinfo.obj
 
 # target to build an object file
-C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.obj:
-	$(MAKE) -f CMakeFiles\glew.dir\build.make CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.obj
-	$(MAKE) -f CMakeFiles\glew_s.dir\build.make CMakeFiles/glew_s.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.obj
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.obj
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glewinfo.rc.obj:
+	$(MAKE) -f CMakeFiles\glewinfo.dir\build.make CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glewinfo.rc.obj
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glewinfo.rc.obj
 
-C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.i: C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.i
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/visualinfo.obj: C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/visualinfo.rc.obj
 
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.i
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/visualinfo.obj
+
+# target to build an object file
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/visualinfo.rc.obj:
+	$(MAKE) -f CMakeFiles\visualinfo.dir\build.make CMakeFiles/visualinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/visualinfo.rc.obj
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/visualinfo.rc.obj
+
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.obj: C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.obj
+
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.obj
+
+# target to build an object file
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.obj:
+	$(MAKE) -f CMakeFiles\glew.dir\build.make CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.obj
+	$(MAKE) -f CMakeFiles\glew_s.dir\build.make CMakeFiles/glew_s.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.obj
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.obj
+
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.i: C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.i
+
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.i
 
 # target to preprocess a source file
-C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.i:
-	$(MAKE) -f CMakeFiles\glew.dir\build.make CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.i
-	$(MAKE) -f CMakeFiles\glew_s.dir\build.make CMakeFiles/glew_s.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.i
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.i
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.i:
+	$(MAKE) -f CMakeFiles\glew.dir\build.make CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.i
+	$(MAKE) -f CMakeFiles\glew_s.dir\build.make CMakeFiles/glew_s.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.i
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.i
 
-C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.s: C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.s
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.s: C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.s
 
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.s
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.s
 
 # target to generate assembly for a file
-C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.s:
-	$(MAKE) -f CMakeFiles\glew.dir\build.make CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.s
-	$(MAKE) -f CMakeFiles\glew_s.dir\build.make CMakeFiles/glew_s.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.s
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.s
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.s:
+	$(MAKE) -f CMakeFiles\glew.dir\build.make CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.s
+	$(MAKE) -f CMakeFiles\glew_s.dir\build.make CMakeFiles/glew_s.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.s
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.s
 
-C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.obj: C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.obj
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.obj: C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.obj
 
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.obj
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.obj
 
 # target to build an object file
-C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.obj:
-	$(MAKE) -f CMakeFiles\glewinfo.dir\build.make CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.obj
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.obj
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.obj:
+	$(MAKE) -f CMakeFiles\glewinfo.dir\build.make CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.obj
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.obj
 
-C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.i: C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.i
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.i: C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.i
 
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.i
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.i
 
 # target to preprocess a source file
-C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.i:
-	$(MAKE) -f CMakeFiles\glewinfo.dir\build.make CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.i
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.i
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.i:
+	$(MAKE) -f CMakeFiles\glewinfo.dir\build.make CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.i
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.i
 
-C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.s: C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.s
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.s: C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.s
 
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.s
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.s
 
 # target to generate assembly for a file
-C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.s:
-	$(MAKE) -f CMakeFiles\glewinfo.dir\build.make CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.s
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.s
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.s:
+	$(MAKE) -f CMakeFiles\glewinfo.dir\build.make CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.s
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.s
 
-C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.obj: C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.c.obj
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.obj: C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.c.obj
 
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.obj
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.obj
 
 # target to build an object file
-C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.c.obj:
-	$(MAKE) -f CMakeFiles\visualinfo.dir\build.make CMakeFiles/visualinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.c.obj
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.c.obj
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.c.obj:
+	$(MAKE) -f CMakeFiles\visualinfo.dir\build.make CMakeFiles/visualinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.c.obj
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.c.obj
 
-C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.i: C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.c.i
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.i: C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.c.i
 
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.i
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.i
 
 # target to preprocess a source file
-C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.c.i:
-	$(MAKE) -f CMakeFiles\visualinfo.dir\build.make CMakeFiles/visualinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.c.i
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.c.i
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.c.i:
+	$(MAKE) -f CMakeFiles\visualinfo.dir\build.make CMakeFiles/visualinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.c.i
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.c.i
 
-C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.s: C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.c.s
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.s: C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.c.s
 
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.s
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.s
 
 # target to generate assembly for a file
-C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.c.s:
-	$(MAKE) -f CMakeFiles\visualinfo.dir\build.make CMakeFiles/visualinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.c.s
-.PHONY : C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.c.s
+C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.c.s:
+	$(MAKE) -f CMakeFiles\visualinfo.dir\build.make CMakeFiles/visualinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.c.s
+.PHONY : C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.c.s
 
 # Help Target
 help:
@@ -349,18 +349,18 @@ help:
 	@echo ... install/local
 	@echo ... install
 	@echo ... install/strip
-	@echo ... C_/Users/Oli/Desktop/projects/cnector/glew/build/glew.obj
-	@echo ... C_/Users/Oli/Desktop/projects/cnector/glew/build/glewinfo.obj
-	@echo ... C_/Users/Oli/Desktop/projects/cnector/glew/build/visualinfo.obj
-	@echo ... C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.obj
-	@echo ... C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.i
-	@echo ... C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.s
-	@echo ... C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.obj
-	@echo ... C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.i
-	@echo ... C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.s
-	@echo ... C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.obj
-	@echo ... C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.i
-	@echo ... C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.s
+	@echo ... C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glew.obj
+	@echo ... C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glewinfo.obj
+	@echo ... C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/visualinfo.obj
+	@echo ... C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.obj
+	@echo ... C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.i
+	@echo ... C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.s
+	@echo ... C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.obj
+	@echo ... C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.i
+	@echo ... C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.s
+	@echo ... C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.obj
+	@echo ... C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.i
+	@echo ... C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.s
 .PHONY : help
 
 

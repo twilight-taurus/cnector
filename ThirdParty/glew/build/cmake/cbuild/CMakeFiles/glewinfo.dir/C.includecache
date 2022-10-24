@@ -54,7 +54,7 @@ GL/glew.h
 windows.h
 -
 
-C:/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c
+C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c
 stdio.h
 -
 stdlib.h

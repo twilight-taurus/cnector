@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Oli/Desktop/projects/cnector/glew/src/glew.c" "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.obj"
+  "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c" "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -21,7 +21,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../../../include"
   )
 set(CMAKE_DEPENDS_CHECK_RC
-  "C:/Users/Oli/Desktop/projects/cnector/glew/build/glew.rc" "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/glew/build/glew.rc.obj"
+  "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glew.rc" "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glew.rc.obj"
   )
 
 # Preprocessor definitions for this target.

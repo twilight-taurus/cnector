@@ -1,0 +1,118 @@
+//////////////////////
+// build bullet3 /////
+//////////////////////
+
+
+// navigate to build folder of bullet3
+- cd ThirdParty/bullet3/build3
+
+// run premake4, depending on OS.
+- premake4 gmake                    (windows)
+- ./premake4_linux(64) gmake        (linux)
+- ./premake4_arm64 gmake            (android)
+- ./premake4_osx(32) gmake          (macOS)
+
+- cd gmake
+
+- mingw32-make (or make)
+    CC=C:\raylib\w64devkit\bin\gcc (or path/to/toolchain_binaries -- MinGW, GNU on Linux, macOS)
+    CXX=C:\raylib\w64devkit\bin\g++
+    AR=C:\raylib\w64devkit\bin\ar 
+        Bullet3Common 
+        Bullet3Geometry 
+        Bullet3Collision 
+        Bullet3Dynamics 
+        BulletInverseDynamics 
+        BulletSoftBody 
+        BulletDynamics 
+        BulletCollision 
+        LinearMath
+
+// navigate to to bin output folder of bullet3
+- cd ../../bin
+
+// copy lib output to main library folder of project
+- COPY /Y *_gmake.a ../../lib/bullet3 (windows)
+
+// navigate back to root project path.
+- cd ../../
+
+///////////////
+build raylib
+///////////////
+
+- cd ThirdParty/raylib/buildc
+
+// make sure that bin directory of c/c++ toolchain is set to path.
+// -- alternatively set CC, CXX variables for compiler path on command line.
+- cmake -G "MinGW Makefiles" .. (windows)
+- cmake -G "Unix Makefiles" .. (linux)
+- cmake -G "Unix Makefiles" .. (macOS)
+
+- mingw32-make ( or make )
+- cd raylib
+// flags.make causes error. try copying custom flags.make to build dir  before running next cmd.
+- COPY /Y ../../../../buildfix/flags.make CMakeFiles/raylib.dir (windows)
+// also rename ShowCursor, CloseWindow functions, to avoid naming conflicts.
+- mingw32-make (or make )
+- COPY /Y libraylib.a ../../../../lib/raylib (windows)
+
+// navigate back to root project path.
+- cd ../../../../
+
+///////////////
+build cglm
+///////////////
+
+- cd ThirdParty/cglm/build
+
+cmake -G "MinGW Makefiles" .. (Windows)
+cmake -G "Unix Makefiles" .. (Linux, macos)
+
+- mingw32-make (windows)
+- make (linux, macos)
+
+COPY /Y libcglm.dll.a ../../../lib/cglm
+COPY /Y libcglm-0.dll ../../../bin
+
+cd ../../../
+
+////////////////
+STC - header-only library --> only include headers
+////////////////
+
+
+////////////////
+Nuklear - header-only library.
+////////////////
+
+
+////////////////
+build GLFW (built by raylib, not needed)
+////////////////
+
+
+////////////////
+build GLEW
+////////////////
+
+- cd ThirdParty/glew/build/cmake/cbuild
+
+- cmake -G "MinGW Makefiles" .. (windows)
+- cmake -G "Unix Makefiles" .. (linux, macos)
+
+- mingw32-make / make
+
+COPY /Y bin/glew32.dll ../../../../../bin
+COPY /Y lib/libglew32.dll.a ../../../../../lib
+
+# go back to project root dir
+cd ../../../../../
+
+# run the topmost makefile, building the project.
+mingw32-make game / make game
+
+////////////////
+link system and opengl libraries. (in topmost project makefile)
+////////////////
+

@@ -299,7 +299,7 @@ ifeq ($(PLATFORM),PLATFORM_DESKTOP)
 endif
 
 # Define library paths containing required libs.
-LDFLAGS = -L. -L./$(RAYLIB_RELEASE_PATH) -L./$(RAYLIB_RELEASE_PATH)/buildc/raylib -L ./ -L./$(LIB_PATH) -L./$(LIB_PATH)/bullet3 -L./$(LIB_PATH)/cglm -L./$(LIB_PATH)/cimgui
+LDFLAGS = -L. -L./$(RAYLIB_RELEASE_PATH) -L./$(RAYLIB_RELEASE_PATH)/buildc/raylib -L ./ -L./$(LIB_PATH) -L./$(LIB_PATH)/bullet3 -L./$(LIB_PATH)/cglm
 
 ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS),BSD)
@@ -317,14 +317,13 @@ ifeq ($(PLATFORM),PLATFORM_RPI)
     LDFLAGS += -L/opt/vc/lib
 endif
 
+LDLIBS = -lBulletDynamics_gmake -lBulletSoftBody_gmake -lBulletCollision_gmake -lBulletInverseDynamicsUtils_gmake -lBulletInverseDynamics_gmake -lLinearMath_gmake -lBullet3Common_gmake -lstc -lcglm.dll
+
 # Define any libraries required on linking
 # if you want to link libraries (libname.so or libname.a), use the -lname
 ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS),WINDOWS)
-		LDLIBS = -lraylib -lBulletDynamics_gmake -lBulletSoftBody_gmake -lBulletCollision_gmake -lBulletInverseDynamicsUtils_gmake -lBulletInverseDynamics_gmake -lLinearMath_gmake -lBullet3Common_gmake -lstc -lopengl32 -lgdi32 -lwinmm -lcglm.dll -lglew32.dll -luser32 -lkernel32
-
-		LDLIBS_C = -lraylib -lopengl32 -lgdi32 -lwinmm -luser32 -lkernel32
-		LDLIBS_CXX = -lBulletDynamics_gmake -lBulletSoftBody_gmake -lBulletCollision_gmake -lBulletInverseDynamicsUtils_gmake -lBulletInverseDynamics_gmake -lLinearMath_gmake -lBullet3Common_gmake
+		LDLIBS += -lraylib -lopengl32 -lgdi32 -lwinmm -lglew32.dll -luser32 -lkernel32
 
         # Required for physac examples
 #        LDLIBS += -static -lpthread
@@ -334,7 +333,8 @@ ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS),LINUX)
         # Libraries for Debian GNU/Linux desktop compiling
         # NOTE: Required packages: libegl1-mesa-dev
-        LDLIBS = -lraylib -lGL -lm -lpthread -ldl -lrt
+        #TODO: append GLEW shared library name for linux here.
+        LDLIBS += -lraylib -lGL -lm -lpthread -ldl -lrt
 
         # On X11 requires also below libraries
         LDLIBS += -lX11
@@ -353,12 +353,14 @@ ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS),OSX)
         # Libraries for OSX 10.9 desktop compiling
         # NOTE: Required packages: libopenal-dev libegl1-mesa-dev
-        LDLIBS = -lraylib -framework OpenGL -framework OpenAL -framework Cocoa
+        #TODO: append GLEW shared library name for OSX here.
+        LDLIBS += -lraylib -framework OpenGL -framework OpenAL -framework Cocoa
     endif
     ifeq ($(PLATFORM_OS),BSD)
         # Libraries for FreeBSD, OpenBSD, NetBSD, DragonFly desktop compiling
         # NOTE: Required packages: mesa-libs
-        LDLIBS = -lraylib -lGL -lpthread -lm
+        #TODO: append GLEW shared library name for FreeBSD here.
+        LDLIBS += -lraylib -lGL -lpthread -lm
 
         # On XWindow requires also below libraries
         LDLIBS += -lX11 -lXrandr -lXinerama -lXi -lXxf86vm -lXcursor
@@ -371,12 +373,15 @@ endif
 ifeq ($(PLATFORM),PLATFORM_RPI)
     # Libraries for Raspberry Pi compiling
     # NOTE: Required packages: libasound2-dev (ALSA)
-    LDLIBS = -lraylib -lbrcmGLESv2 -lbrcmEGL -lpthread -lrt -lm -lbcm_host -ldl
+    LDLIBS += -lraylib -lbrcmGLESv2 -lbrcmEGL -lpthread -lrt -lm -lbcm_host -ldl
 endif
+
+###
 ifeq ($(PLATFORM),PLATFORM_WEB)
     # Libraries for web (HTML5) compiling
     LDLIBS = $(RAYLIB_RELEASE_PATH)/libraylib.bc
 endif
+###
 
 # Define a recursive wildcard function
 rwildcard=$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2) $(filter $(subst *,%,$2),$d))

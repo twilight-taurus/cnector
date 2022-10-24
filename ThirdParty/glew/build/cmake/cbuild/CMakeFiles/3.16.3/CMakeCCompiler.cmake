@@ -1,7 +1,7 @@
-set(CMAKE_C_COMPILER "C:/raylib/w64devkit/bin/gcc.exe")
+set(CMAKE_C_COMPILER "C:/Users/Oli/MinGW/bin/gcc.exe")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "GNU")
-set(CMAKE_C_COMPILER_VERSION "11.2.0")
+set(CMAKE_C_COMPILER_VERSION "6.3.0")
 set(CMAKE_C_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_C_COMPILER_WRAPPER "")
 set(CMAKE_C_STANDARD_COMPUTED_DEFAULT "11")
@@ -17,11 +17,11 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "C:/raylib/w64devkit/bin/ar.exe")
-set(CMAKE_C_COMPILER_AR "C:/raylib/w64devkit/bin/gcc-ar.exe")
-set(CMAKE_RANLIB "C:/raylib/w64devkit/bin/ranlib.exe")
-set(CMAKE_C_COMPILER_RANLIB "C:/raylib/w64devkit/bin/gcc-ranlib.exe")
-set(CMAKE_LINKER "C:/raylib/w64devkit/bin/ld.exe")
+set(CMAKE_AR "C:/Users/Oli/MinGW/bin/ar.exe")
+set(CMAKE_C_COMPILER_AR "C:/Users/Oli/MinGW/bin/gcc-ar.exe")
+set(CMAKE_RANLIB "C:/Users/Oli/MinGW/bin/ranlib.exe")
+set(CMAKE_C_COMPILER_RANLIB "C:/Users/Oli/MinGW/bin/gcc-ranlib.exe")
+set(CMAKE_LINKER "C:/Users/Oli/MinGW/bin/ld.exe")
 set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCC 1)
 set(CMAKE_C_COMPILER_LOADED 1)
@@ -70,7 +70,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/raylib/w64devkit/lib/gcc/i686-w64-mingw32/11.2.0/include;C:/raylib/w64devkit/lib/gcc/i686-w64-mingw32/11.2.0/include-fixed;C:/raylib/w64devkit/i686-w64-mingw32/include")
-set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "mingw32;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex;kernel32")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/raylib/w64devkit/lib/gcc/i686-w64-mingw32/11.2.0;C:/raylib/w64devkit/lib/gcc;C:/raylib/w64devkit/i686-w64-mingw32/lib;C:/raylib/w64devkit/lib")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/Oli/MinGW/lib/gcc/mingw32/6.3.0/include;C:/Users/Oli/MinGW/include;C:/Users/Oli/MinGW/lib/gcc/mingw32/6.3.0/include-fixed")
+set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "mingw32;gcc;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/Users/Oli/MinGW/lib/gcc/mingw32/6.3.0;C:/Users/Oli/MinGW/lib/gcc;C:/Users/Oli/MinGW/mingw32/lib;C:/Users/Oli/MinGW/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

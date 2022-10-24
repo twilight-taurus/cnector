@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/visualinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/build/visualinfo.rc.obj"
-  "CMakeFiles/visualinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/visualinfo.c.obj"
+  "CMakeFiles/visualinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/visualinfo.rc.obj"
+  "CMakeFiles/visualinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/visualinfo.c.obj"
   "bin/visualinfo.exe"
   "bin/visualinfo.exe.manifest"
   "bin/visualinfo.pdb"

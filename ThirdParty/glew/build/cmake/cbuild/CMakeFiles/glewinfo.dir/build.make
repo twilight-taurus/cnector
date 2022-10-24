@@ -42,10 +42,10 @@ RM = C:\Users\Oli\cmake\bin\cmake.exe -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake
+CMAKE_SOURCE_DIR = C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild
+CMAKE_BINARY_DIR = C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild
 
 # Include any dependencies generated for this target.
 include CMakeFiles/glewinfo.dir/depend.make
@@ -56,41 +56,41 @@ include CMakeFiles/glewinfo.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/glewinfo.dir/flags.make
 
-CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.obj: CMakeFiles/glewinfo.dir/flags.make
-CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.obj: CMakeFiles/glewinfo.dir/includes_C.rsp
-CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.obj: C:/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.obj"
-	C:\raylib\w64devkit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\glewinfo.dir\C_\Users\Oli\Desktop\projects\cnector\glew\src\glewinfo.c.obj   -c C:\Users\Oli\Desktop\projects\cnector\glew\src\glewinfo.c
+CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.obj: CMakeFiles/glewinfo.dir/flags.make
+CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.obj: CMakeFiles/glewinfo.dir/includes_C.rsp
+CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.obj: C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.obj"
+	C:\Users\Oli\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\glewinfo.dir\C_\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\src\glewinfo.c.obj   -c C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\src\glewinfo.c
 
-CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.i"
-	C:\raylib\w64devkit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Oli\Desktop\projects\cnector\glew\src\glewinfo.c > CMakeFiles\glewinfo.dir\C_\Users\Oli\Desktop\projects\cnector\glew\src\glewinfo.c.i
+CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.i"
+	C:\Users\Oli\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\src\glewinfo.c > CMakeFiles\glewinfo.dir\C_\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\src\glewinfo.c.i
 
-CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.s"
-	C:\raylib\w64devkit\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Oli\Desktop\projects\cnector\glew\src\glewinfo.c -o CMakeFiles\glewinfo.dir\C_\Users\Oli\Desktop\projects\cnector\glew\src\glewinfo.c.s
+CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.s"
+	C:\Users\Oli\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\src\glewinfo.c -o CMakeFiles\glewinfo.dir\C_\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\src\glewinfo.c.s
 
-CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/build/glewinfo.rc.obj: CMakeFiles/glewinfo.dir/flags.make
-CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/build/glewinfo.rc.obj: C:/Users/Oli/Desktop/projects/cnector/glew/build/glewinfo.rc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building RC object CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/build/glewinfo.rc.obj"
-	C:\Users\Oli\MinGW\bin\windres.exe -O coff $(RC_DEFINES) $(RC_INCLUDES) $(RC_FLAGS) C:\Users\Oli\Desktop\projects\cnector\glew\build\glewinfo.rc CMakeFiles\glewinfo.dir\C_\Users\Oli\Desktop\projects\cnector\glew\build\glewinfo.rc.obj
+CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glewinfo.rc.obj: CMakeFiles/glewinfo.dir/flags.make
+CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glewinfo.rc.obj: C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glewinfo.rc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building RC object CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glewinfo.rc.obj"
+	C:\Users\Oli\MinGW\bin\windres.exe -O coff $(RC_DEFINES) $(RC_INCLUDES) $(RC_FLAGS) C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\glewinfo.rc CMakeFiles\glewinfo.dir\C_\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\glewinfo.rc.obj
 
 # Object files for target glewinfo
 glewinfo_OBJECTS = \
-"CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.obj" \
-"CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/build/glewinfo.rc.obj"
+"CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.obj" \
+"CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glewinfo.rc.obj"
 
 # External object files for target glewinfo
 glewinfo_EXTERNAL_OBJECTS =
 
-bin/glewinfo.exe: CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glewinfo.c.obj
-bin/glewinfo.exe: CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/glew/build/glewinfo.rc.obj
+bin/glewinfo.exe: CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glewinfo.c.obj
+bin/glewinfo.exe: CMakeFiles/glewinfo.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glewinfo.rc.obj
 bin/glewinfo.exe: CMakeFiles/glewinfo.dir/build.make
 bin/glewinfo.exe: lib/libglew32.dll.a
 bin/glewinfo.exe: CMakeFiles/glewinfo.dir/linklibs.rsp
 bin/glewinfo.exe: CMakeFiles/glewinfo.dir/objects1.rsp
 bin/glewinfo.exe: CMakeFiles/glewinfo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable bin\glewinfo.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable bin\glewinfo.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\glewinfo.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -103,6 +103,6 @@ CMakeFiles/glewinfo.dir/clean:
 .PHONY : CMakeFiles/glewinfo.dir/clean
 
 CMakeFiles/glewinfo.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles\glewinfo.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles\glewinfo.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/glewinfo.dir/depend
 

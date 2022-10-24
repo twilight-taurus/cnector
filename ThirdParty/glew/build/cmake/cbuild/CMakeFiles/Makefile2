@@ -43,10 +43,10 @@ RM = C:\Users\Oli\cmake\bin\cmake.exe -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake
+CMAKE_SOURCE_DIR = C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild
+CMAKE_BINARY_DIR = C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -80,14 +80,14 @@ clean: CMakeFiles/visualinfo.dir/clean
 CMakeFiles/glewinfo.dir/all: CMakeFiles/glew.dir/all
 	$(MAKE) -f CMakeFiles\glewinfo.dir\build.make CMakeFiles/glewinfo.dir/depend
 	$(MAKE) -f CMakeFiles\glewinfo.dir\build.make CMakeFiles/glewinfo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles --progress-num=7,8,9 "Built target glewinfo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles --progress-num=7,8,9 "Built target glewinfo"
 .PHONY : CMakeFiles/glewinfo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/glewinfo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles 6
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/glewinfo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles 0
 .PHONY : CMakeFiles/glewinfo.dir/rule
 
 # Convenience name for target.
@@ -107,14 +107,14 @@ CMakeFiles/glewinfo.dir/clean:
 CMakeFiles/glew.dir/all:
 	$(MAKE) -f CMakeFiles\glew.dir\build.make CMakeFiles/glew.dir/depend
 	$(MAKE) -f CMakeFiles\glew.dir\build.make CMakeFiles/glew.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles --progress-num=1,2,3 "Built target glew"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles --progress-num=1,2,3 "Built target glew"
 .PHONY : CMakeFiles/glew.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/glew.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles 3
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/glew.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles 0
 .PHONY : CMakeFiles/glew.dir/rule
 
 # Convenience name for target.
@@ -134,14 +134,14 @@ CMakeFiles/glew.dir/clean:
 CMakeFiles/glew_s.dir/all:
 	$(MAKE) -f CMakeFiles\glew_s.dir\build.make CMakeFiles/glew_s.dir/depend
 	$(MAKE) -f CMakeFiles\glew_s.dir\build.make CMakeFiles/glew_s.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles --progress-num=4,5,6 "Built target glew_s"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles --progress-num=4,5,6 "Built target glew_s"
 .PHONY : CMakeFiles/glew_s.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/glew_s.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles 3
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/glew_s.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles 0
 .PHONY : CMakeFiles/glew_s.dir/rule
 
 # Convenience name for target.
@@ -161,14 +161,14 @@ CMakeFiles/glew_s.dir/clean:
 CMakeFiles/uninstall.dir/all:
 	$(MAKE) -f CMakeFiles\uninstall.dir\build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) -f CMakeFiles\uninstall.dir\build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles 0
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -188,14 +188,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/visualinfo.dir/all: CMakeFiles/glew.dir/all
 	$(MAKE) -f CMakeFiles\visualinfo.dir\build.make CMakeFiles/visualinfo.dir/depend
 	$(MAKE) -f CMakeFiles\visualinfo.dir\build.make CMakeFiles/visualinfo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles --progress-num=10,11,12 "Built target visualinfo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles --progress-num=10,11,12 "Built target visualinfo"
 .PHONY : CMakeFiles/visualinfo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/visualinfo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles 6
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/visualinfo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles 0
 .PHONY : CMakeFiles/visualinfo.dir/rule
 
 # Convenience name for target.

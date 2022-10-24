@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/glew/build/glew.rc.obj"
-  "CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/glew/src/glew.c.obj"
+  "CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/glew.rc.obj"
+  "CMakeFiles/glew.dir/C_/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/src/glew.c.obj"
   "bin/glew32.dll"
   "bin/glew32.dll.manifest"
   "bin/glew32.pdb"

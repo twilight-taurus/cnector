@@ -1,13 +1,13 @@
-if(NOT EXISTS "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/install_manifest.txt")
-endif(NOT EXISTS "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/install_manifest.txt")
+if(NOT EXISTS "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/install_manifest.txt")
+endif(NOT EXISTS "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/install_manifest.txt")
 
 if (NOT DEFINED CMAKE_INSTALL_PREFIX)
   set (CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/glew")
 endif ()
  message(${CMAKE_INSTALL_PREFIX})
 
-file(READ "C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/install_manifest.txt" files)
+file(READ "C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach(file ${files})
   message(STATUS "Uninstalling $ENV{DESTDIR}${file}")

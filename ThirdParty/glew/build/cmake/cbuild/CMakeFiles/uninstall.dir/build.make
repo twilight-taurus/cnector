@@ -42,10 +42,10 @@ RM = C:\Users\Oli\cmake\bin\cmake.exe -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake
+CMAKE_SOURCE_DIR = C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild
+CMAKE_BINARY_DIR = C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild
 
 # Utility rule file for uninstall.
 
@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild
 include CMakeFiles/uninstall.dir/progress.make
 
 CMakeFiles/uninstall:
-	C:\Users\Oli\cmake\bin\cmake.exe -P C:/Users/Oli/Desktop/projects/cnector/glew/build/cmake/cbuild/cmake_uninstall.cmake
+	C:\Users\Oli\cmake\bin\cmake.exe -P C:/Users/Oli/Desktop/projects/cnector/ThirdParty/glew/build/cmake/cbuild/cmake_uninstall.cmake
 
 uninstall: CMakeFiles/uninstall
 uninstall: CMakeFiles/uninstall.dir/build.make
@@ -70,6 +70,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild C:\Users\Oli\Desktop\projects\cnector\glew\build\cmake\cbuild\CMakeFiles\uninstall.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild C:\Users\Oli\Desktop\projects\cnector\ThirdParty\glew\build\cmake\cbuild\CMakeFiles\uninstall.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 
