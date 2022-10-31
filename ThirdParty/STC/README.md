@@ -3,6 +3,8 @@
 STC - Smart Template Containers for C
 ======================================
 
+https://github.com/tylov/STC
+
 News
 ----
 **VERSION 2.X RELEASED**: There are two main breaking changes from V1.X.
