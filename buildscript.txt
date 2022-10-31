@@ -7,7 +7,7 @@
 - git submodule add https://github.com/twilight-taurus/bullet3 ./ThirdParty/bullet3
 - git submodule add https://github.com/twilight-taurus/raylib ./ThirdParty/raylib
 - git submodule add https://github.com/recp/cglm ./ThirdParty/cglm (might need to fork this)
-
+- git submodule add https://github.com/tylov/STC ./ThirdParty/STC
 
 //////////////////////
 // build bullet3 /////
