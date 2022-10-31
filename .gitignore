@@ -2,3 +2,4 @@
 /.vscode
 .env.local
 *.exe
+/ThirdPartyPull

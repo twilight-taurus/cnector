@@ -115,6 +115,10 @@ static inline void control_travel() {
     // --> only to object direction changes via designated buttons.
 }
 
+static inline void control_shoot() {
+
+}
+
 static inline void control_menu() {
     return;
 }
@@ -126,6 +130,7 @@ void process_control() {
         switch (CONTROL_STATE->current_mode) {
             case CONTROLMODE_TRAVEL:
                 control_travel();
+                control_shoot();
 //                printf("processed controlmode travel!\n");
                 return;
             case CONTROLMODE_MENU:

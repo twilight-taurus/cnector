@@ -102,7 +102,9 @@ DWORD WINAPI threaded_process(LPVOID lpData) {
 
         // reset event immediately to unsignaled state for next pass.
         ResetEvent(hRenderThenProcessEvent);
-        // set this in main loop.
+
+        // HINT: should this be set in main loop ???
+        // signal to threaded_sync
         SetEvent(hRPEvent[1]);
     }
 

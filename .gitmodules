@@ -1,0 +1,9 @@
+[submodule "ThirdParty/bullet3"]
+	path = ThirdParty/bullet3
+	url = https://github.com/twilight-taurus/bullet3
+[submodule "ThirdParty/raylib"]
+	path = ThirdParty/raylib
+	url = https://github.com/twilight-taurus/raylib
+[submodule "ThirdParty/cglm"]
+	path = ThirdParty/cglm
+	url = https://github.com/recp/cglm

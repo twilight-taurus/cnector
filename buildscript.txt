@@ -1,13 +1,34 @@
+-- use premake4/5 as build system.
+
+//////////////////////
+ add third party libs as submodules.
+//////////////////////
+
+- git submodule add https://github.com/twilight-taurus/bullet3 ./ThirdParty/bullet3
+- git submodule add https://github.com/twilight-taurus/raylib ./ThirdParty/raylib
+- git submodule add https://github.com/recp/cglm ./ThirdParty/cglm (might need to fork this)
+
+
 //////////////////////
 // build bullet3 /////
 //////////////////////
+
+rmdir /s /q ThirdPartyPull/bullet3/data
+rmdir /s /q ThirdPartyPull/bullet3/docs
+rmdir /s /q ThirdPartyPull/bullet3/examples
+rmdir /s /q ThirdPartyPull/bullet3/test
+
+rmdir /s /q ThirdPartyPull/bullet3/Bullet3OpenCL
+rmdir /s /q ThirdPartyPull/bullet3/BulletInverseDynamics
+rmdir /s /q ThirdPartyPull/bullet3/BulletSoftBody
+rmdir /s /q ThirdPartyPull/bullet3/clew
 
 
 // navigate to build folder of bullet3
 - cd ThirdParty/bullet3/build3
 
 // run premake4, depending on OS.
-- premake4 gmake                    (windows)
+- premake4 --no-demos --no-clsocket --no-enet --no-gtest gmake (windows)
 - ./premake4_linux(64) gmake        (linux)
 - ./premake4_arm64 gmake            (android)
 - ./premake4_osx(32) gmake          (macOS)
@@ -15,24 +36,27 @@
 - cd gmake
 
 - mingw32-make (or make)
-    CC=C:\raylib\w64devkit\bin\gcc (or path/to/toolchain_binaries -- MinGW, GNU on Linux, macOS)
-    CXX=C:\raylib\w64devkit\bin\g++
-    AR=C:\raylib\w64devkit\bin\ar 
-        Bullet3Common 
-        Bullet3Geometry 
-        Bullet3Collision 
-        Bullet3Dynamics 
-        BulletInverseDynamics 
-        BulletSoftBody 
-        BulletDynamics 
-        BulletCollision 
+    ( CC=C:\raylib\w64devkit\bin\gcc (or path/to/toolchain_binaries -- MinGW, GNU on Linux, macOS) )
+    ( CXX=C:\raylib\w64devkit\bin\g++ )
+    ( AR=C:\raylib\w64devkit\bin\ar )
+        Bullet3Common
+        Bullet3Geometry
+        Bullet3Collision
+        Bullet3Dynamics
+        BulletDynamics
+        BulletCollision
         LinearMath
 
 // navigate to to bin output folder of bullet3
 - cd ../../bin
 
 // copy lib output to main library folder of project
-- COPY /Y *_gmake.a ../../lib/bullet3 (windows)
+// batch (windows)
+- for /r %%a in (*_gmake.a) do xcopy "%%a" ..\..\..\lib\bullet3 /i
+// cmd line (windows)
+- for /r %a in (*_gmake.a) do xcopy "%a" ..\..\..\lib\bullet3 /i
+// delete local output.
+del *_gmake.a
 
 // navigate back to root project path.
 - cd ../../
@@ -40,8 +64,9 @@
 ///////////////
 build raylib
 ///////////////
-
-- cd ThirdParty/raylib/buildc
+- cd ThirdParty/raylib
+- mkdir build
+- cd build
 
 // make sure that bin directory of c/c++ toolchain is set to path.
 // -- alternatively set CC, CXX variables for compiler path on command line.
@@ -49,65 +74,75 @@ build raylib
 - cmake -G "Unix Makefiles" .. (linux)
 - cmake -G "Unix Makefiles" .. (macOS)
 
-- mingw32-make ( or make )
-- cd raylib
 // flags.make causes error. try copying custom flags.make to build dir  before running next cmd.
-- COPY /Y ../../../../buildfix/flags.make CMakeFiles/raylib.dir (windows)
-// also rename ShowCursor, CloseWindow functions, to avoid naming conflicts.
+- COPY /Y "..\..\..\makefix\flags.make" .\raylib\CMakeFiles\raylib.dir (windows)
+
 - mingw32-make (or make )
-- COPY /Y libraylib.a ../../../../lib/raylib (windows)
+- cd raylib
+- COPY /Y libraylib.a ..\..\..\..\lib (windows)
 
 // navigate back to root project path.
-- cd ../../../../
+- cd ..\..\..\..\ (windows)
 
 ///////////////
 build cglm
 ///////////////
 
-- cd ThirdParty/cglm/build
+- cd ThirdParty/cglm (windows)
 
-cmake -G "MinGW Makefiles" .. (Windows)
-cmake -G "Unix Makefiles" .. (Linux, macos)
+- mkdir build (windows)
+- cd build (windows)
+- cmake -G "MinGW Makefiles" .. (Windows)
+- cmake -G "Unix Makefiles" .. (Linux, macos)
 
 - mingw32-make (windows)
 - make (linux, macos)
 
-COPY /Y libcglm.dll.a ../../../lib/cglm
-COPY /Y libcglm-0.dll ../../../bin
+COPY /Y libcglm.dll.a ..\..\..\lib (windows)
+COPY /Y libcglm-0.dll ..\..\..\bin (windows)
 
-cd ../../../
+// back to root directory
+cd ../../../ (windows)
 
 ////////////////
 STC - header-only library --> only include headers
+supply headers to project repository in ThirdParty/STC
 ////////////////
 
 
 ////////////////
 Nuklear - header-only library.
+supply headers to project repository in ThirdParty/nuklear
 ////////////////
 
 
 ////////////////
 build GLFW (built by raylib, not needed)
+supply headers to project repository in ThirdParty/GLFW
 ////////////////
 
 
 ////////////////
-build GLEW
+build GLEW (needed for nuklear to work)
+--> try using glad.h from raylib/src/external first.
 ////////////////
 
-- cd ThirdParty/glew/build/cmake/cbuild
+- cd ThirdPartyPull/glew/build/cmake
+- mkdir build
+- cd build
 
-- cmake -G "MinGW Makefiles" .. (windows)
-- cmake -G "Unix Makefiles" .. (linux, macos)
+- cmake -G "MinGW Makefiles" -DBUILD_UTILS=OFF -DBUILD_FRAMEWORK=OFF .. (windows)
+- cmake -G "Unix Makefiles" -DBUILD_UTILS=OFF -DBUILD_FRAMEWORK=OFF .. (linux, macos)
 
 - mingw32-make / make
 
-COPY /Y bin/glew32.dll ../../../../../bin
-COPY /Y lib/libglew32.dll.a ../../../../../lib
+cd bin
+COPY /Y glew32.dll ..\..\..\..\..\..\bin
+cd ..\lib
+COPY /Y libglew32.dll.a ..\..\..\..\..\..\lib
 
 # go back to project root dir
-cd ../../../../../
+cd ../../../../../../
 
 # run the topmost makefile, building the project.
 mingw32-make game / make game

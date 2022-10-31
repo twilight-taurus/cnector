@@ -98,7 +98,10 @@ void CNRun() {
         //////////////////////////////////////////
         // sync_ui and update will run until here...
         //////////////////////////////////////////
-
+        
+        ////////
+        // TODO: this is win32 only. make sure to put the below functionality into threading_win32.c
+        ///////
         WaitForMultipleObjectsEx((DWORD)2, hSUEvent, TRUE, (DWORD)60000, FALSE);
 
         // reset events so they can signal next pass.
@@ -106,7 +109,7 @@ void CNRun() {
         ResetEvent(hSUEvent[1]);
 
         /*
-            begin with rendering related stuff before SetEvent, 
+            begin with rendering related stuff before SetEvent(hRPEvent[0]), 
             in the case that process thread may not start before that.
         */
 

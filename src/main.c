@@ -34,7 +34,6 @@ int main()
     CObject object = WORLD_STATE->cobjects.data[0];
     assign_control(&WORLD_STATE->cobjects.data[0].physical);
 
-
     switch(object.physical.info.base_info.physics_type) {
         case CPHYS_SPHERE:
             printf("Found sphere\n");

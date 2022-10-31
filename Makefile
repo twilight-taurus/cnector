@@ -278,7 +278,7 @@ endif
 
 # Define include paths for required headers
 # NOTE: Several external required libraries (stb and others)
-INCLUDE_PATHS = -I. -I./header -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib/src -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib/src/external -I$(INCLUDE_PATH) -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/bullet3 -I$(API_DIR)/bullet3 -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/cglm/include -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/STC/include -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)
+INCLUDE_PATHS = -I. -I./header -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib/src -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib/src/external -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/raylib/src/external/glfw/include -I$(INCLUDE_PATH) -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/bullet3 -I$(API_DIR)/bullet3 -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/cglm/include -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)/STC/include -I$(CNECTOR_PATH)/$(THIRDPARTYDEPS_PATH)
 # Define additional directories containing required header files
 ifeq ($(PLATFORM),PLATFORM_RPI)
     # RPI required libraries

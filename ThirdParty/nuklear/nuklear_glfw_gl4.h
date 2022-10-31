@@ -13,7 +13,9 @@
 #ifndef NK_GLFW_GL4_H_
 #define NK_GLFW_GL4_H_
 
-#include <GL/glew.h>
+//#include <GL/glew.h>
+// contains the defines needed from glew. let's see if we can replace this with glew.h
+#include <external/glad.h>
 
 #include <string.h>
 #include <GLFW/glfw3.h>

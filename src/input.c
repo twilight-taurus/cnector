@@ -14,6 +14,10 @@ void init_input(void) {
 
     INPUT_STATE->wheel_up = false;
     INPUT_STATE->wheel_down = false;
+    INPUT_STATE->click_left = false;
+    INPUT_STATE->click_right = false;
+    INPUT_STATE->click_middle = false;
+
     // dont show cursor in app
 //    HideCursor();
     // lock the cursor to the center of the window.
@@ -33,9 +37,14 @@ InputState * get_input_state() {
 
 void switch_input_mode(InputMode mode) {
     INPUT_STATE->mode = mode;
+
+    
 }
 
 static inline void process_keys() {
+
+    //GetKeyPressed()
+
     switch (INPUT_STATE->mode) {
         case INPUTMODE_CAMERA_AND_INTERACTION:
             // down
@@ -43,38 +52,38 @@ static inline void process_keys() {
                 printf("W pressed, in standard mode!\n");
                 INPUT_STATE->forward = true;
             // up
-            } else if ( IsKeyReleased(KEY_W) || IsKeyReleased(KEY_UP) ) {
+            } else /*if ( IsKeyReleased(KEY_W) || IsKeyReleased(KEY_UP) ) */{
                 printf("W released, in standard mode!\n");
                 INPUT_STATE->forward = false;
             }
             // ...
             if ( IsKeyPressed(KEY_S) ||  IsKeyPressed(KEY_DOWN) ) {
                 INPUT_STATE->backward = true;
-            } else if ( IsKeyReleased(KEY_S)  || IsKeyReleased(KEY_DOWN) ) {
+            } else /*if ( IsKeyReleased(KEY_S)  || IsKeyReleased(KEY_DOWN) )*/ {
                 INPUT_STATE->backward = false;
             }
 
             if ( IsKeyPressed(KEY_A) || IsKeyPressed(KEY_LEFT) ) {
                 INPUT_STATE->left = true;
-            } else if ( IsKeyReleased(KEY_A) || IsKeyReleased(KEY_LEFT) ) {
+            } else /*if ( IsKeyReleased(KEY_A) ||IsKeyReleased(KEY_LEFT) )*/ {
                 INPUT_STATE->left = false;
             }
             
             if ( IsKeyPressed(KEY_D) || IsKeyPressed(KEY_RIGHT) ) {
                 INPUT_STATE->right = true;
-            } else if ( IsKeyReleased(KEY_D) || IsKeyReleased(KEY_RIGHT) ) {
+            } else /*if ( IsKeyReleased(KEY_D) || IsKeyReleased(KEY_RIGHT) ) */ {
                 INPUT_STATE->right = false;
             }
 
             if ( IsKeyPressed(KEY_Q) ) {
                 INPUT_STATE->up = true;
-            } else if ( IsKeyReleased(KEY_D) ) {
+            } else /*if ( IsKeyReleased(KEY_D) )*/ {
                 INPUT_STATE->up = false;
             }
 
              if ( IsKeyPressed(KEY_E) ) {
                 INPUT_STATE->down = true;
-            } else if ( IsKeyReleased(KEY_E) ) {
+            } else /*if ( IsKeyReleased(KEY_E) )*/ {
                 INPUT_STATE->down = false;
             }
 
@@ -121,8 +130,10 @@ static inline void process_keys() {
 
 CNECTOR_INLINE void process_btns() {
     if ( IsMouseButtonPressed(MOUSE_BUTTON_LEFT) ) {
-
-    } else if ( IsMouseButtonReleased(MOUSE_BUTTON_LEFT) ) {
+        // get camera direction, then spawn a sphere and launch it in the camera direction.
+        // specify the --mass-- of the object or the specific gravitional force on it (if possible)
+        // --> so that it may fly in a straight line (mostly), and not immediately bounce off the ground.
+    } else /*if ( IsMouseButtonReleased(MOUSE_BUTTON_LEFT) ) */{
 
     }
 
