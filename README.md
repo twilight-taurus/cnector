@@ -1,7 +1,7 @@
 # cnector
 
+A barebones video game engine built in Open Source Heaven
 
-# A Custom Engine for Video Games Using Various Third Party Libraries.
+Ontop a Pristine Set Of Open Source Dependencies.
 
-# Requires a Raylib Compiler for the entire project, available here:
-# https://github.com/raysan5/raylib/releases
+Credit goes out to all the vendors!
