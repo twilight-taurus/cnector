@@ -1,7 +1,7 @@
 #ifndef CSHAPE_H
 #define CSHAPE_H
 
-#include <asset.h>
+#include <model.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -22,14 +22,12 @@ typedef struct CShapeBase {
 
 } CShapeBase;
 
-
 typedef struct CSphere {
     // asset base
     CAsset_ID       asset_id;
     CAssetType      asset_type;
     // shape base
-    CShapeType      shape_type; 
-
+    CShapeType      shape_type;
     // shape-related
     RayModel        model;
 
@@ -44,7 +42,6 @@ typedef struct CCube {
     CAssetType  asset_type;
     // shape base
     CShapeType   shape_type; 
-
     // shape-related
     RayModel        model;
 
@@ -59,7 +56,6 @@ typedef struct CPlane {
     CAssetType  asset_type;
     // shape base
     CShapeType   shape_type; 
-
     // shape-related
     RayModel        model;
 

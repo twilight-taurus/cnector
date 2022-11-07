@@ -1,5 +1,14 @@
 #include <model.h>
+
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+
+
+
+
+
+
 
 CModel cmodel_load(const char * file_name) {
     CModel my_model;

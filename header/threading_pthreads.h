@@ -1,4 +1,0 @@
-#ifndef CTHREADING_PTHREADS_H
-#define CTHREADING_PTHREADS_H
-
-#endif

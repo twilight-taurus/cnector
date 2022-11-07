@@ -4,18 +4,12 @@
 #ifndef CNECTOR_H
 #define CNECTOR_H
 
-#include <stdio.h>
-#include <stdlib.h>
 
-#include <time.h>
 
 //#define dSINGLE // single: float precision ; dDOUBLE: double precision (we have single version library linked.)
 //#include <ode.h>
 
-#ifndef RAY_LIB
-#define GRAPHICS_API_OPENGL_43
-#include "raylib.h"
-#endif
+#include <GL/glew.h>
 
 #include <cglm/cglm.h>
 #include <cglm/call.h>

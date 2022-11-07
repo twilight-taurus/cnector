@@ -1,13 +1,19 @@
 #ifndef CSTATE_HEADER
 #define CSTATE_HEADER
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <bulletC_API.h>
 #include <world.h>
 
 #include <math.h>
 
 #ifndef RAY_LIB
-#define GRAPHICS_API_OPENGL_43
+    #ifndef GRAPHICS_API_OPENGL_33
+    #define GRAPHICS_API_OPENGL_33
+    #endif
 #include <raylib.h>
 #endif
 
@@ -19,10 +25,6 @@
 #include <imgui/backends/imgui_impl_opengl3.h>
 /////////////////////////////////////
 */
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 #include <cglm/cglm.h>
 #include <cglm/call.h>
@@ -41,7 +43,7 @@ extern "C" {
 #include <nuklear/nuklear_glfw_gl4.h>
 
 // rlights raylib example (no implementation)
-#include "rlights.h"
+#include <extras/rlights.h>
 
 typedef struct CWindowState {
     // try to allocate memory on heap on initialization here. (200 units)
@@ -82,7 +84,6 @@ typedef struct CGuiState {
 } CGuiState;
 
 
-
 // what is supposed to be rendered to the screen. Aka. final world view projection. (World + UI)
 typedef struct CRenderState {
     Texture2D   render_texture;
@@ -99,7 +100,6 @@ typedef struct CRenderState {
 
     int         VIEW_XPOS;
     int         VIEW_YPOS;
-
 } CRenderState;
 
 typedef enum CControlMode {

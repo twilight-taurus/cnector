@@ -1,12 +1,6 @@
 #ifndef INTERACTION_H
 #define INTERACTION_H
 
-#ifndef RAY_LIB
-#define GRAPHICS_API_OPENGL_43
-#include "raylib.h"
-#endif
-
-#include <stdlib.h>
 
 #include <world.h>
 #include <camera.h>

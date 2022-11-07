@@ -1,7 +1,11 @@
 #include "shader.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+
+
 #define RLIGHTS_IMPLEMENTATION
-#include "rlights.h"
+#include "extras/rlights.h"
 
 
 void init_shader() {

@@ -13,7 +13,6 @@
 #include <shader.h>
 
 
-
 #ifdef __cplusplus
 extern "C" {
 #endif

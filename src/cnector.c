@@ -1,7 +1,12 @@
 #include <cnector.h>
 
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <time.h>
 
 void CNInitialize() {
+    //#define GLEW_OK 0
 
     // before all else that OpenGL related, we need to call InitWindow. (it initiates openGL)
     GLFWwindow * gl_win = InitWindow(_SCREEN_WIDTH, _SCREEN_HEIGHT, "cnector");
@@ -50,7 +55,7 @@ void CNInitialize() {
 
     // init nuklear
     const char* glsl_version = "#version 330";
-    init_gui(gl_win);
+//    init_gui(gl_win);
 
     // finally initialize the renderer.
     init_render();
@@ -63,7 +68,7 @@ void CNDeinitialize() {
     deinit_interaction();
     deinit_control();
     deinit_camera();
-    deinit_gui();
+//    deinit_gui();
 
     deinit_render();
 
@@ -78,7 +83,7 @@ void CNDeinitialize() {
     deinit_threading();
 
     //--------------------------------------------------------------------------------------
-    CloseWindow();        // Close window and OpenGL context
+    RCloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     // Finally, deinitialize the global state structs/variables.

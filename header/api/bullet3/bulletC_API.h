@@ -4,12 +4,6 @@
 #include <cglm/vec3.h>
 #include <cglm/mat4.h>
 
-
-#ifndef RAY_LIB
-#define GRAPHICS_API_OPENGL_43
-#include "raylib.h"
-#endif
-
 #include <model.h>
 
 #ifdef __cplusplus

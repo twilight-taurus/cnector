@@ -528,22 +528,22 @@ void CPlaneObject_createRigidBody(CPlaneObject * object) {
     return;
 }
 
-CNECTOR_INLINE void CCharacterObject_createRigidBody(CCharacterObject * object) {
+inline void CCharacterObject_createRigidBody(CCharacterObject * object) {
 
     return;
 }
 
-CNECTOR_INLINE void CVehicleObject_createRigidBody(CVehicleObject * object) {
+inline void CVehicleObject_createRigidBody(CVehicleObject * object) {
 
     return;
 }
 
-CNECTOR_INLINE void CStructureObject_createRigidBody(CStructureObject * object) {
+inline void CStructureObject_createRigidBody(CStructureObject * object) {
 
     return;
 }
 
-CNECTOR_INLINE void CTerrainObject_createRigidBody(CTerrainObject * object) {
+inline void CTerrainObject_createRigidBody(CTerrainObject * object) {
 
     int triangle_count = (object->model->meshes + 0)->triangleCount;
     int vertex_count = (object->model->meshes + 0)->vertexCount;

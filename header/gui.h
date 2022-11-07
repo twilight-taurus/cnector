@@ -4,7 +4,9 @@
 #include "globals.h"
 
 #ifndef RAY_LIB
-#define GRAPHICS_API_OPENGL_43
+    #ifndef GRAPHICS_API_OPENGL_33
+    #define GRAPHICS_API_OPENGL_33
+    #endif
 #include "raylib.h"
 #endif
 

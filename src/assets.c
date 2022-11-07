@@ -1,5 +1,6 @@
 #include <assets.h>
 
+
 CAssetsState * ASSETS_STATE;
 
 // on removed from cvec

@@ -1,5 +1,9 @@
 #include "camera.h"
 
+#include <stdio.h>
+#include <string.h>
+
+
 CameraController * CAMERA_CONTROLLER;
 
 // initially set to true
@@ -20,7 +24,7 @@ int deinit_camera() {
     return 0;
 }
 
-CNECTOR_INLINE void process_mouse() {
+inline void process_mouse() {
 
     Vector2 mouse_pos = GetMousePosition();
     float sensitivity = 0.1;
@@ -87,7 +91,7 @@ void process_position() {
 // free camera movement.
 
 // left, right
-CNECTOR_INLINE void process_lateral() {
+inline void process_lateral() {
 
     if (INPUT_STATE->left && INPUT_STATE->right) {
         return;
@@ -100,7 +104,7 @@ CNECTOR_INLINE void process_lateral() {
     }
 }
 // up, down
-CNECTOR_INLINE void process_vertical() {
+inline void process_vertical() {
 
     if (INPUT_STATE->up && INPUT_STATE->down) {
         return;
@@ -116,7 +120,7 @@ CNECTOR_INLINE void process_vertical() {
     }
 }
 // forward,backward
-CNECTOR_INLINE void process_horizontal() {
+inline void process_horizontal() {
 
     if (INPUT_STATE->forward && INPUT_STATE->backward) {
         return;
@@ -129,11 +133,13 @@ CNECTOR_INLINE void process_horizontal() {
     }
 }
 
-CNECTOR_INLINE void process_directional() {
+static inline void process_directional() {
     process_lateral();
     process_vertical();
     process_horizontal();
 }
+
+
 
 // rotational movement -> recalculate directional, right, and up vector here.
 static inline void process_rotational() {
@@ -232,7 +238,7 @@ static inline void process_rotational() {
     }
 }
 // zoom in, zoom out (adjust field of view, etc.)
-CNECTOR_INLINE void process_zoom() {
+inline void process_zoom() {
     if (INPUT_STATE->wheel_up) {
         if ( !(CAMERA_STATE->distance <= 10.0) ) {
             CAMERA_STATE->distance -= 10.0;

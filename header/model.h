@@ -1,32 +1,31 @@
 #ifndef CMODEL_H
 #define CMODEL_H
 
-#include <stdio.h>
-#include <stdlib.h>
-
 #include <globals.h>
-
-#ifndef RAY_LIB
-#define GRAPHICS_API_OPENGL_43
-#include "raylib.h"
-#endif
 
 #include <cglm/cglm.h>
 #include <cglm/call.h>
 
+// header-only
 #include <asset.h>
+
+#ifndef RAY_LIB
+    #ifndef GRAPHICS_API_OPENGL_33
+    #define GRAPHICS_API_OPENGL_33
+    #endif
+    #include "raylib.h"
+#endif
+
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+typedef Mesh RayMesh;
+
+typedef Model RayModel;
 
 typedef size_t                  CModel_ID;
-
-typedef struct CMesh {
-    RayMesh mesh;
-    CModel_ID id;
-} CMesh;
 
 typedef enum CModelType {
     CMODEL_NONE, // not determined.
@@ -38,7 +37,12 @@ typedef enum CModelType {
     CMODEL_SPHERE
 } CModelType;
 
-// loaded model. not a world object.
+
+typedef struct CMesh {
+    RayMesh mesh;
+    CModel_ID id;
+} CMesh;
+
 typedef struct CModel {
     // base data
     CAsset_ID               asset_id;

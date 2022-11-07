@@ -1,8 +1,11 @@
 #ifndef CASSETS_H
 #define CASSETS_H
 
-#include <model.h>
 #include <shape.h>
+
+// not necessary, since included by shape.h
+// just here for clarity/documentation.
+#include <model.h>
 
 #ifdef __cplusplus
 extern "C" {

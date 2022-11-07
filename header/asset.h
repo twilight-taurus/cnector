@@ -5,13 +5,8 @@
 extern "C" {
 #endif
 
-#ifndef RAY_LIB
-#define GRAPHICS_API_OPENGL_43
-#include "raylib.h"
-#endif
-
-typedef Model                   RayModel;
-typedef Mesh                    RayMesh;
+//typedef Model                   RayModel;
+//typedef Mesh                    RayMesh;
 
 typedef short                   CAsset_ID;
 

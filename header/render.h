@@ -1,10 +1,6 @@
 #ifndef CRENDER_HEADER
 #define CRENDER_HEADER
 
-#ifndef RAY_LIB
-#define GRAPHICS_API_OPENGL_43
-#include <raylib.h>
-#endif
 
 #include <state.h>
 
@@ -12,7 +8,7 @@
 #include <interaction.h>
 #include <camera.h>
 
-#include <gui.h>
+//#include <gui.h>
 
 /*
 

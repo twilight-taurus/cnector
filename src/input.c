@@ -1,5 +1,8 @@
 #include <input.h>
 
+#include <stdio.h>
+
+
 InputState * INPUT_STATE;
 
 
@@ -37,8 +40,6 @@ InputState * get_input_state() {
 
 void switch_input_mode(InputMode mode) {
     INPUT_STATE->mode = mode;
-
-    
 }
 
 static inline void process_keys() {
@@ -128,7 +129,7 @@ static inline void process_keys() {
     }
 }
 
-CNECTOR_INLINE void process_btns() {
+inline void process_btns() {
     if ( IsMouseButtonPressed(MOUSE_BUTTON_LEFT) ) {
         // get camera direction, then spawn a sphere and launch it in the camera direction.
         // specify the --mass-- of the object or the specific gravitional force on it (if possible)
@@ -152,12 +153,12 @@ CNECTOR_INLINE void process_btns() {
     return;
 }
 
-CNECTOR_INLINE void process_mousemove() {
+inline void process_mousemove() {
     return;
     // ...
 }
 
-CNECTOR_INLINE void process_mousewheel() {
+inline void process_mousewheel() {
     float move = GetMouseWheelMove(); // Get mouse wheel movement Y
 
     if (move > 0.0) {
@@ -176,7 +177,7 @@ CNECTOR_INLINE void process_mousewheel() {
     }
 }
 
-CNECTOR_INLINE void process_chars() {
+inline void process_chars() {
     return;
     // ...
 }

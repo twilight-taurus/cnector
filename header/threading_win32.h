@@ -4,19 +4,16 @@
 // only include this in windows systems
 #if defined(_WIN32)
 
-#include <processthreadsapi.h>
-#include <process.h>
-#include <synchapi.h>
 
+// headers available in mingw32.
+#include <winnt.h>
+#include <winbase.h>
+
+//#include <process.h>
+//#include <synchapi.h>
+//#include <Windows.h>
 
 #include "globals.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-
-#include <stdbool.h>
-
-#include <time.h>
 
 #include <user_control.h>
 #include <interaction.h>
@@ -24,7 +21,7 @@
 
 #include <shader.h>
 
-#include <gui.h> 
+//#include <gui.h> 
 
 #include <physics.h>
 

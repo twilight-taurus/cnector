@@ -1,5 +1,7 @@
 #include <state.h>
 
+#include <string.h>
+
 
 CWindowState * WINDOW_STATE;
 
@@ -13,7 +15,9 @@ CShaderState * SHADER_STATE;
 
 CRenderState * RENDER_STATE;
 
-CGuiState * GUI_STATE;
+//CGuiState * GUI_STATE;
+
+
 
 
 void init_state() {
@@ -43,7 +47,7 @@ void init_state() {
     RENDER_STATE->VIEW_XPOS = RENDER_STATE->VIEW_WIDTH / 4;
     RENDER_STATE->VIEW_YPOS = RENDER_STATE->VIEW_HEIGHT / 3.25;
 
-    GUI_STATE = malloc(sizeof(CGuiState));
+//    GUI_STATE = malloc(sizeof(CGuiState));
 
     // init control
     CONTROL_STATE = malloc( sizeof(CControlState) );
@@ -118,7 +122,7 @@ void deinit_state() {
     free(INTERACTION_STATE);
     free(CAMERA_STATE);
 
-    free(GUI_STATE);
+//    free(GUI_STATE);
 
     free(SHADER_STATE);
     free(RENDER_STATE);

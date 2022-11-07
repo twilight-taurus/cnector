@@ -100,38 +100,41 @@ void render() {
                     case OBJECT_TYPE_PHYSICAL:
                         switch(object.physical.info.base_info.physics_type) {
                             case CPHYS_SPHERE:
+                            {
                                 Vector3 loc_sphere = (Vector3){
                                     object.sphere.info.sphere_info.world_transform[3][0],
                                     object.sphere.info.sphere_info.world_transform[3][1],
                                     object.sphere.info.sphere_info.world_transform[3][2]
                                 };
-
                                 //DrawModel(*object.sphere.model, loc_sphere, 1.0, WHITE);
-
                                 break;
+                            }
                             case CPHYS_TERRAIN:
-                                Vector3 loc_terrain = (Vector3){
+                            {
+                                 Vector3 loc_terrain = (Vector3){
                                     object.terrain.info.terrain_info.world_transform[3][0],
                                     object.terrain.info.terrain_info.world_transform[3][1],
                                     object.terrain.info.terrain_info.world_transform[3][2]
                                 };
-
                                 DrawModel(*object.terrain.model, loc_terrain, 1.0, WHITE);
 
                                 break;
+                            }
                             case CPHYS_PLANE:
+                            {
                                 Vector3 loc_plane = (Vector3){
                                     object.plane.info.plane_info.world_transform[3][0],
                                     object.plane.info.plane_info.world_transform[3][1],
                                     object.plane.info.plane_info.world_transform[3][2]
                                 };
-
                                 DrawModel(*object.plane.model, loc_plane, 1.0, BLUE);
 
                                 break;
+                            }
                             default:
                                 break;
                         }
+                        break;
                     default:
                         break;
                 }
@@ -170,7 +173,7 @@ void render() {
         EndMode3D();
 
 //            printf("Starting draw_gui!\n");
-        draw_gui();
+//        draw_gui();
 //            printf("Finished draw_gui!\n");
         // Deactivated raylib font/text, so this will not work.
         // (deactivated, because conflict with Nuklear UI, which both use stb font)
@@ -181,14 +184,14 @@ void render() {
     EndDrawing();
 }
 
-CNECTOR_INLINE void render_gui() {
+inline void render_gui() {
     return;
 }
 
-CNECTOR_INLINE void render_scene() {
+inline void render_scene() {
     return;
 }
 
-CNECTOR_INLINE void post_sync_ui() {
+inline void post_sync_ui() {
     return;
 }

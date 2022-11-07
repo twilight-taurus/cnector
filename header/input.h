@@ -1,16 +1,12 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-#include <stdio.h>
+#include <globals.h>
+
 #include <stdbool.h>
 #include <stdlib.h>
 
-#include <globals.h>
-
-#ifndef RAY_LIB
-#define GRAPHICS_API_OPENGL_43
-#include "raylib.h"
-#endif
+#include <state.h>
 
 #ifdef __cplusplus
 extern "C" {

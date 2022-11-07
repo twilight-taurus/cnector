@@ -13,6 +13,13 @@
 // build bullet3 /////
 //////////////////////
 
+
+
+### TODO: Fix bulletC_api.h/cpp . It was written using a 'tweaked' version of btDiscreteDynamicsWorld.cpp
+### 'tweak' bullet3 source code if necessary.
+
+
+
 rmdir /s /q ThirdPartyPull/bullet3/data
 rmdir /s /q ThirdPartyPull/bullet3/docs
 rmdir /s /q ThirdPartyPull/bullet3/examples
@@ -26,6 +33,9 @@ rmdir /s /q ThirdPartyPull/bullet3/clew
 
 // navigate to build folder of bullet3
 - cd ThirdParty/bullet3/build3
+
+- cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DOPENGL_VERSION=3.3 -DBUILD_UNIT_TESTS=OFF -DBUILD_CPU_DEMOS=OFF -DBUILD_ENET=OFF -DBUILD_CLSOCKET=OFF -DBUILD_OPENGL3_DEMOS=OFF -DBUILD_BULLET2_DEMOS=OFF -DBUILD_EXTRAS=OFF .
+- cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DOPENGL_VERSION=3.3 -DBUILD_UNIT_TESTS=OFF -DBUILD_CPU_DEMOS=OFF -DBUILD_ENET=OFF -DBUILD_CLSOCKET=OFF -DBUILD_OPENGL3_DEMOS=OFF -DBUILD_BULLET2_DEMOS=OFF -DBUILD_EXTRAS=OFF .
 
 // run premake4, depending on OS.
 - premake4 --no-demos --no-clsocket --no-enet --no-gtest gmake (windows)

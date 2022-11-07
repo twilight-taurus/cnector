@@ -1,5 +1,9 @@
 #include <interaction.h>
 
+
+#include <stdlib.h>
+
+
 CInteractionController * INTERACTION_CONTROLLER;
 
 
@@ -44,6 +48,7 @@ inline void process_interaction() {
                 // camera will neither follow nor target it.
                 // move direction of object depends on angle of camera direction relative to the object. (0, 90, 180, 270)
                 case INTERACTIONMODE_MOVE:
+                {
                     // TODO: check for current InteractionMode
                     if(INPUT_STATE->left) {
                     } else {
@@ -71,14 +76,18 @@ inline void process_interaction() {
                     if(INPUT_STATE->down) {
                     } else {
                     }
-
+                    break;
+                }
                 // free travel mode. move camera around freely with mouse or designated buttons.
                 // physics simulation active. 
                 // interaction object/character/vehicle will not react to camera direction changes.
                 // --> only to object direction changes via designated buttons.
                 case INTERACTIONMODE_ROTATE:
-
+                {
+                    break;
+                }
                 default:
+                    return;
                 // ...
             }
     }

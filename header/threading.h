@@ -5,20 +5,13 @@
 
 #include "globals.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-
-#include <stdbool.h>
-
-#include <time.h>
-
 #include <user_control.h>
 #include <interaction.h>
 #include <camera.h>
 
 #include <shader.h>
 
-#include <gui.h> 
+//#include <gui.h> 
 
 #include <physics.h>
 

@@ -1,6 +1,14 @@
 #include "threading_win32.h"
 
 
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <stdbool.h>
+
+#include <time.h>
+
+
 HANDLE hRenderThenProcessEvent      = NULL;
 
 HANDLE hSyncThenUpdateEvent         = NULL;
@@ -96,7 +104,7 @@ DWORD WINAPI threaded_process(LPVOID lpData) {
         process_physics();
 
 //        printf("simulation step done!\n");
-        process_gui();
+//        process_gui();
 //        printf("processed gui!\n");
         // adjust camera values AFTER simulation step has completed.
 
@@ -135,7 +143,7 @@ DWORD WINAPI threaded_update(LPVOID lpData) {
 
         update_shader();
 
-        update_gui();
+//        update_gui();
 
         // at the end of this loop.
         ResetEvent(hSyncThenUpdateEvent);

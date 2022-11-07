@@ -1,10 +1,6 @@
 #ifndef CCONTROL_HEADER
 #define CCONTROL_HEADER
 
-#ifndef RAY_LIB
-#define GRAPHICS_API_OPENGL_43
-#include "raylib.h"
-#endif
 
 #include <stdlib.h>
 
