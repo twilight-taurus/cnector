@@ -1,6 +1,8 @@
 #include <state.h>
 
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 
 CWindowState * WINDOW_STATE;
@@ -18,8 +20,6 @@ CRenderState * RENDER_STATE;
 //CGuiState * GUI_STATE;
 
 
-
-
 void init_state() {
     WINDOW_STATE = malloc(sizeof(CWindowState));
 
@@ -27,12 +27,19 @@ void init_state() {
     WINDOW_STATE->WINDOW_TITLE = malloc(_WINDOW_TITLE_MAX_LENGTH * sizeof(char));
     WINDOW_STATE->WINDOW_TITLE_LENGTH = sizeof(_WINDOW_TITLE);
 
+    strncpy(
+        WINDOW_STATE->WINDOW_TITLE,
+        _WINDOW_TITLE,
+        WINDOW_STATE->WINDOW_TITLE_LENGTH
+    );
+    /*
     strncpy_s(
         WINDOW_STATE->WINDOW_TITLE, 
         WINDOW_STATE->WINDOW_TITLE_LENGTH,
         _WINDOW_TITLE,
         _WINDOW_TITLE_MAX_LENGTH
     );
+    */
 
     SHADER_STATE = malloc(sizeof(CShaderState));
 

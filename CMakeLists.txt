@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.4.3)
 
-set(PROJECT_NAME Cnector)
+set(PROJECT_NAME cnector)
 
 project (${PROJECT_NAME} LANGUAGES C CXX)
 
@@ -120,7 +120,8 @@ add_executable(${PROJECT_NAME}
 # --> Make sure of CORRECT order of libraries. Otherwise 'undefined' error will appear.
 ######################
 target_link_libraries(${PROJECT_NAME}
-    raylib
+    #raylib
+    raylib_static
 
     Bullet3Dynamics
     Bullet3Collision
@@ -133,32 +134,15 @@ target_link_libraries(${PROJECT_NAME}
     LinearMath
 
     cglm
-    glew
-#    ${LIB_OUTPUT}/libraylib.a
-#    ${LIB_OUTPUT}/libcglm.dll.a
-#    ${LIB_OUTPUT}/libraylib.a
-#    ${LIB_OUTPUT}/libcglm.dll.a
-#    ${LIB_OUTPUT}/libBullet3Collision.a
-#    ${LIB_OUTPUT}/libBullet3Common.a
-#    ${LIB_OUTPUT}/libBullet3Dynamics.a
-#    ${LIB_OUTPUT}/libBullet2FileLoader.a
-#    ${LIB_OUTPUT}/libBulletCollision.a
-#    ${LIB_OUTPUT}/libBulletDynamics.a
-#    ${LIB_OUTPUT}/libBulletInverseDynamics.a
-#    ${LIB_OUTPUT}/libLinearMath.a
+    glew_s # static library (glew without s is shared library)
 
-#    ${LIB_OUTPUT}/libglew32.dll.a
-
+    #TODO: link depending on OS
+    # windows-specific
     libopengl32.a
     libmsvcrt.a
-#    libmingw32.a
-#    libglu32.a
     libgdi32.a
     libwinmm.a
     libcrtdll.a
-#    libgcov.a
-#    libgcc.a
-#    libatomic.a
     libuser32.a
     libkernel32.a
 

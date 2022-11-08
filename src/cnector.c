@@ -27,6 +27,10 @@ void CNInitialize() {
         exit(1);
     }
 
+    // Change working directory to app directory. (so ressources can be accessed, etc.)
+//    const char * current_wd = GetApplicationDirectory();
+//    ChangeDirectory(current_wd);
+
     // TODO: find a way to dynamically adjust Target FPS.
     SetTargetFPS(60);
 
