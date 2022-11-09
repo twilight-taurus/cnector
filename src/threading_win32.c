@@ -187,15 +187,18 @@ DWORD WINAPI threaded_sync_ui(LPVOID lpData) {
 }
 
 
-int run_threading() {
+int start_threading() {
 
     g_hUSThreads[1] = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)threaded_sync_ui, (LPVOID)0, (DWORD)NULL, threadIDs[3]);
     g_hUSThreads[0] = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)threaded_update, (LPVOID)0, (DWORD)NULL, threadIDs[2]);
     g_hRPThreads[1] = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)threaded_process, (LPVOID)0, (DWORD)NULL, threadIDs[1]);
 
     // initialize the multi-threaded loop, by launching dummy events.
-    SetEvent(hRPEvent[0]);
-    SetEvent(hRPEvent[1]);
+    // render() function will start alongside this. in run_multithreaded()
+    SetEvent(hRenderThenProcessEvent); 
+
+//    SetEvent(hRPEvent[0]);
+//    SetEvent(hRPEvent[1]);
 
     return 1;
 }

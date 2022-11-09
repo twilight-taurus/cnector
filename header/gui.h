@@ -3,12 +3,7 @@
 
 #include "globals.h"
 
-#ifndef RAY_LIB
-    #ifndef GRAPHICS_API_OPENGL_33
-    #define GRAPHICS_API_OPENGL_33
-    #endif
-#include "raylib.h"
-#endif
+#include <raylib_guard.h>
 
 #include <state.h>
 

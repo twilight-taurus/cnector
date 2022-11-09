@@ -5,6 +5,63 @@
 
 #include <time.h>
 
+
+inline int run_singlethreaded() {
+
+    process_input();
+
+    process_camera();
+
+    process_control();
+
+    process_physics();
+
+    update_physics();
+
+    update_camera();
+
+    update_shader();
+
+    render();
+}
+
+inline int run_multithreaded() {
+
+    // draws everything to the frame buffer, and flips it.
+    render();
+
+    #if defined(CTHREADING_WIN32_HEADER)
+        // rendering complete
+        SetEvent(hRPEvent[0]); // render complete event.
+
+        // signal threaded sync_ui to commence, which in turns signals threaded update,
+        // once both threaded process and render complete.
+
+        WaitForMultipleObjectsEx((DWORD)2, hSUEvent, TRUE, (DWORD)60000, FALSE);
+
+        // reset events so they can signal next pass.
+        ResetEvent(hSUEvent[0]);
+        ResetEvent(hSUEvent[1]);
+
+        // threaded_process starts alongside render()
+        // if we set this before calling render(), both can run simultaneously.
+        SetEvent(hRenderThenProcessEvent);  // process thread sets hRPEvent[1]
+
+    #elif defined(CTHREADING_HEADER)
+        // linux, macos threading stuff.
+    #endif
+
+    /*
+        begin with rendering related stuff before SetEvent(hRPEvent[0]), 
+        in the case that process thread may not start before that.
+    */
+
+    /*
+        rendering continues here after process thread has begun.
+    */
+
+}
+
 void CNInitialize() {
     //#define GLEW_OK 0
 
@@ -37,7 +94,9 @@ void CNInitialize() {
     // state objects (camera, interaction, etc)
     init_state();
 
-    init_threading();
+    #ifndef CN_DISABLE_MULTITHREADING
+        init_threading();
+    #endif
 
     // initialize physics world object.
     init_physics();
@@ -84,8 +143,9 @@ void CNDeinitialize() {
 
     deinit_physics();
 
-    deinit_threading();
-
+    #ifndef CN_DISABLE_MULTITHREADING
+        deinit_threading();
+    #endif
     //--------------------------------------------------------------------------------------
     RCloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
@@ -97,42 +157,41 @@ void CNDeinitialize() {
 void CNRun() {
 
     // start up the threads. (including physics simulation.)
-    run_threading();
+    #ifndef CN_DISABLE_MULTITHREADING
+        start_threading();
+    #endif
 
     // this the loop from our main thread.
     // call rendering-related stuff only here.
 
-    while(!WindowShouldClose()) {
+    while( !WindowShouldClose() ) {
+/*
+        process_input();
 
+        process_camera();
+
+        process_control();
+
+        process_physics();
+
+        update_physics();
+
+        update_camera();
+
+        update_shader();
+*/
         //////////////////////////////////////////
         // sync_ui and update will run until here...
         //////////////////////////////////////////
-        
+
         ////////
         // TODO: this is win32 only. make sure to put the below functionality into threading_win32.c
         ///////
-        WaitForMultipleObjectsEx((DWORD)2, hSUEvent, TRUE, (DWORD)60000, FALSE);
-
-        // reset events so they can signal next pass.
-        ResetEvent(hSUEvent[0]);
-        ResetEvent(hSUEvent[1]);
-
-        /*
-            begin with rendering related stuff before SetEvent(hRPEvent[0]), 
-            in the case that process thread may not start before that.
-        */
-
-        SetEvent(hRenderThenProcessEvent);  // process thread sets hRPEvent[1]
-
-        /*
-            rendering continues here after process thread has begun.
-        */
-
-        // draws everything to the frame buffer, and flips it.
-        render();
-        // rendering complete
-
-        SetEvent(hRPEvent[0]); // set rendering complete event.
+        #ifndef CN_DISABLE_MULTITHREADING
+            run_multithreaded();
+        #else
+            run_singlethreaded();
+        #endif
 
 //        printf("Starting update_gui!\n");
 //        printf("Finished update_gui!\n");

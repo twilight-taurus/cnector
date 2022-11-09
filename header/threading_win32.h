@@ -50,7 +50,7 @@ extern void     init_threading();
 
 extern void     deinit_threading();
 
-extern int      run_threading();
+extern int      start_threading();
 
 DWORD WINAPI    threaded_process(LPVOID lpData);
 

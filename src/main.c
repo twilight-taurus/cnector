@@ -19,6 +19,10 @@
 *
 ********************************************************************************************/
 
+
+// disable multithreading.
+//#define CN_DISABLE_MULTITHREADING
+
 // top-level include for the game library
 #include <cnector.h>
 

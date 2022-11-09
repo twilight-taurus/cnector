@@ -5,10 +5,6 @@
 #define CNECTOR_H
 
 
-
-//#define dSINGLE // single: float precision ; dDOUBLE: double precision (we have single version library linked.)
-//#include <ode.h>
-
 #include <GL/glew.h>
 
 #include <cglm/cglm.h>
@@ -17,7 +13,11 @@
 #include "render.h"
 #include "shader.h"
 
-#include "threading_win32.h"
+#if defined(_WIN32)
+    #include "threading_win32.h"
+#else // add condition for linux, macos, etc.
+    #include "threading.h"
+#endif
 
 #ifdef __cplusplus
 extern "C" {
